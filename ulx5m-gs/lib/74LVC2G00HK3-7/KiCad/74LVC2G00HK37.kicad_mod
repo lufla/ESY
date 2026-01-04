@@ -1,0 +1,303 @@
+(footprint "74LVC2G00HK37"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "74LVC2G00HK3-7")
+	(tags "Integrated Circuit")
+	(property "Reference" "IC2"
+		(at 2.25 0.01 0)
+		(layer "F.SilkS")
+		(uuid "410e7bed-dea8-4801-aeda-59820965356e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Value" "74LVC2G00HK3-7"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "781d692e-8c80-4a36-a91b-f2caa596740b")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.diodes.com//assets/Datasheets/74LVC2G00.pdf"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2058dff2-3902-4778-90ad-61092f89fcae")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "NAND Gate IC 2 Channel X2-DFN1410-8 Logic Gates Logic LVC 2 Gate 1.95mm x 1.0mm x 0.4mm. 0.5 mm lead pitch"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9408f019-55bb-44a3-812d-665de6acaa06")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Height" "0.35"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3d18736a-0560-4050-bfa4-c96569d540cd")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mouser Part Number" "621-74LVC2G00HK3-7"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4234165e-8288-4162-b265-eea1d5f3c1d3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/74LVC2G00HK3-7?qs=b%252B2mHxW%2Fy4VUCdXIdoS1CQ%3D%3D"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "774b4474-7c4f-4f72-a8a4-32b3f019eb4b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer_Name" "Diodes Incorporated"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3effeed3-ea19-44e3-b5e1-d34a8ea93237")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer_Part_Number" "74LVC2G00HK3-7"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c7f34bd9-1e44-45e9-a98f-80e4ef7b65cf")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -0.8 0.63)
+		(end -0.8 0.63)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "cc916938-e2f7-4c54-ba55-853a6877ca5f")
+	)
+	(fp_line
+		(start -0.8 0.73)
+		(end -0.8 0.73)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "0ee166ab-b68b-4dbd-a5ec-5c7994ec35df")
+	)
+	(fp_arc
+		(start -0.8 0.63)
+		(mid -0.75 0.68)
+		(end -0.8 0.73)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4cfc6646-540a-4577-9865-b94d63d5a69b")
+	)
+	(fp_arc
+		(start -0.8 0.73)
+		(mid -0.85 0.68)
+		(end -0.8 0.63)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "2b3079c9-564a-4431-9a87-93c5581e112f")
+	)
+	(fp_line
+		(start -1 -0.94)
+		(end 0.8 -0.94)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "4fcc9998-9128-4642-8821-14938f8fcf97")
+	)
+	(fp_line
+		(start -1 0.89)
+		(end -1 -0.94)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "cff6e984-5864-4f38-9ed9-2ffbdba31e6f")
+	)
+	(fp_line
+		(start 0.8 -0.94)
+		(end 0.8 0.88)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "241339f0-3dd0-453a-a618-caa2cc83a418")
+	)
+	(fp_line
+		(start 0.8 0.89)
+		(end -1 0.89)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "3447fcd4-1751-49ee-bdeb-f007b789f4c5")
+	)
+	(fp_line
+		(start -0.675 -0.5)
+		(end -0.675 0.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "4969a43a-1e50-473a-847a-c778f1c72a1b")
+	)
+	(fp_line
+		(start -0.675 0.5)
+		(end 0.675 0.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "52109bd7-e005-456a-9f4d-e36250e9cb2d")
+	)
+	(fp_line
+		(start 0.675 -0.5)
+		(end -0.675 -0.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "de8bda59-2d74-43c3-bd28-0233e5d1b908")
+	)
+	(fp_line
+		(start 0.675 0.5)
+		(end 0.675 -0.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "9f18ca48-8d76-4f24-9f99-81009e56683f")
+	)
+	(pad "1" smd rect
+		(at -0.525 0.375)
+		(size 0.2 0.65)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "1e7269f8-fd04-4ec6-8a56-5d6af95b22b9")
+	)
+	(pad "2" smd rect
+		(at -0.175 0.4)
+		(size 0.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "155a599f-a36e-40cf-acbc-7fe28b6093e2")
+	)
+	(pad "3" smd rect
+		(at 0.175 0.4)
+		(size 0.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "3ae21684-defe-4edb-afe8-eaeee86fa011")
+	)
+	(pad "4" smd rect
+		(at 0.525 0.4)
+		(size 0.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "6f4f4f84-b5bd-4199-b6eb-af0b20ef67b2")
+	)
+	(pad "5" smd rect
+		(at 0.525 -0.4)
+		(size 0.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "83740a8a-e42e-4d9b-a438-52145a291c4b")
+	)
+	(pad "6" smd rect
+		(at 0.175 -0.4)
+		(size 0.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "bc5d19cb-5071-4f43-97cb-cd2e21e36b00")
+	)
+	(pad "7" smd rect
+		(at -0.175 -0.4)
+		(size 0.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "910e8866-4d55-4aa1-80f3-24ace95bc374")
+	)
+	(pad "8" smd rect
+		(at -0.525 -0.4)
+		(size 0.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "bc48fb6c-3c2c-4357-afe0-d8f75da4f45d")
+	)
+	(embedded_fonts no)
+	(model "74LVC2G00HK3-7.stp"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

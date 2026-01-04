@@ -1,0 +1,331 @@
+(footprint "PESD3V3L5UF115"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "SOT886")
+	(tags "Integrated Circuit")
+	(property "Reference" "IC1"
+		(at 2.37 0.05 0)
+		(layer "F.SilkS")
+		(uuid "a29084fd-ba0c-42ed-9fb3-96da5311e25d")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Value" "74LVC1G04GM,115"
+		(at 0 0.114 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "367b6dbf-e6c4-4f99-a687-6d93b5b8ba2d")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74LVC1G04.pdf"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "361bd572-3eac-4127-8165-c97b3cc959b0")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "74LVC1G04 - Single inverter@en-us"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5d0a0d38-b195-42fd-969f-328aecd48a09")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Height" "0.5"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b05a1602-b500-48a4-b32b-700818875e6b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mouser Part Number" "771-LVC1G04GM115"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6c098c3b-9641-4a45-922b-0ac1930a9cdb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Nexperia/74LVC1G04GM115?qs=me8TqzrmIYXvgrQ5OHD1Cw%3D%3D"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "857cbf52-f6f3-4c01-a00b-c2005174aa82")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer_Name" "Nexperia"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "bb20db62-c6da-4ef8-84a2-d764007cee7a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer_Part_Number" "74LVC1G04GM,115"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "72b7ef8c-2a47-4cd8-be3f-41e26621d112")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -0.85 0.59)
+		(end -0.85 0.59)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "9d99763b-3087-42e7-b8be-57a4eca6b328")
+	)
+	(fp_line
+		(start -0.85 0.64)
+		(end -0.85 0.64)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "291780fd-4aa4-496b-b34b-d730ebfe3c30")
+	)
+	(fp_line
+		(start -0.725 0)
+		(end -0.725 -0.05)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b38c7f79-6b8e-41ab-881c-b00bb0724c23")
+	)
+	(fp_line
+		(start -0.725 0.05)
+		(end -0.725 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4366a72f-9f8c-4833-817d-7c67c46e335e")
+	)
+	(fp_line
+		(start 0.725 0)
+		(end 0.725 -0.05)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "5ff74d99-46d5-4b56-8461-e1f76c88f4bc")
+	)
+	(fp_line
+		(start 0.725 0.05)
+		(end 0.725 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "59eb9a0d-05c4-4ae5-b8f3-1ddbb5fcca03")
+	)
+	(fp_arc
+		(start -0.85 0.59)
+		(mid -0.825 0.615)
+		(end -0.85 0.64)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "63d38ff2-7447-455b-b02d-d1a38a7bdf1c")
+	)
+	(fp_arc
+		(start -0.85 0.64)
+		(mid -0.875 0.615)
+		(end -0.85 0.59)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7ad50b1d-ff7a-4f7f-b47f-402b3614d61f")
+	)
+	(fp_line
+		(start -0.96 -0.71)
+		(end 0.92 -0.71)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "c1074855-0e06-4730-86b5-7251d98a30c2")
+	)
+	(fp_line
+		(start -0.96 0.73)
+		(end -0.96 -0.71)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "40cba94b-73f7-47ff-ab8c-799293658ea1")
+	)
+	(fp_line
+		(start 0.92 -0.71)
+		(end 0.92 0.73)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "dbed847f-abba-4d90-9df6-5de92a38dd76")
+	)
+	(fp_line
+		(start 0.92 0.73)
+		(end -0.96 0.73)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "20ef6e92-b4a6-4721-a52a-8cd796aad698")
+	)
+	(fp_line
+		(start -0.725 -0.5)
+		(end 0.725 -0.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "6216f69f-7ddc-4a7a-ab31-b34fcecfbd9f")
+	)
+	(fp_line
+		(start -0.725 0.5)
+		(end -0.725 -0.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "3770f218-d2b0-44f1-b577-45b86bcc1b48")
+	)
+	(fp_line
+		(start 0.725 -0.5)
+		(end 0.725 0.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "15f0c7c6-824f-4106-bd21-58cfe5e8230a")
+	)
+	(fp_line
+		(start 0.725 0.5)
+		(end -0.725 0.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "fcf72573-79aa-489c-b077-9e5383a505c7")
+	)
+	(pad "1" smd rect
+		(at -0.5 0.337 90)
+		(size 0.37 0.425)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "60cb00f4-0960-4914-aa9b-4b93192d9922")
+	)
+	(pad "2" smd rect
+		(at 0 0.337 90)
+		(size 0.37 0.425)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "431175cc-cdf7-45e6-879a-f3554c93a4a8")
+	)
+	(pad "3" smd rect
+		(at 0.5 0.337 90)
+		(size 0.37 0.425)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "fb8f0def-e20c-4259-a8cd-3c1026284d95")
+	)
+	(pad "4" smd rect
+		(at 0.5 -0.337 90)
+		(size 0.37 0.425)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "4ba2466a-c9a6-4460-95d4-ebff8b88ca46")
+	)
+	(pad "5" smd rect
+		(at 0 -0.337 90)
+		(size 0.37 0.425)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "f728702e-7468-4388-8f4b-1121ca845701")
+	)
+	(pad "6" smd rect
+		(at -0.5 -0.337 90)
+		(size 0.37 0.425)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "8160bf12-30b9-4f8e-a47b-5137c99e99f8")
+	)
+	(embedded_fonts no)
+	(model "74LVC1G04GM,115.stp"
+		(offset
+			(xyz -1.059999927 -1.739999983 1.289999942)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 90 0 0)
+		)
+	)
+)
