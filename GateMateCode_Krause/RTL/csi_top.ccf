@@ -1,0 +1,94 @@
+## csi_top.ccf
+
+NET   "clk_ext"         Loc = "IO_SB_A8" | SCHMITT_TRIGGER=true;
+
+## HS differential inputs (default 2.5V VDD)
+NET   "DPHY_CK_HS_P"    Loc = "IO_NB_A1";
+NET   "DPHY_CK_HS_N"    Loc = "IO_NB_B1";
+NET   "DPHY_D1_HS_P"    Loc = "IO_NB_A5";
+NET   "DPHY_D1_HS_N"    Loc = "IO_NB_B5";
+NET   "DPHY_D0_HS_P"    Loc = "IO_NB_A8";
+NET   "DPHY_D0_HS_N"    Loc = "IO_NB_B8";
+
+## LP single-ended inputs (default 1.2V VDD)
+NET   "DPHY_CK_LP_P"    Loc = "IO_NA_A0";
+NET   "DPHY_CK_LP_N"    Loc = "IO_NA_B0";
+NET   "DPHY_D1_LP_P"    Loc = "IO_NA_A1";
+NET   "DPHY_D1_LP_N"    Loc = "IO_NA_B1";
+NET   "DPHY_D0_LP_P"    Loc = "IO_NA_A4";
+NET   "DPHY_D0_LP_N"    Loc = "IO_NA_B4";
+
+## I2C pair (for CCI) (default 2.5V VDD)
+NET   "DPHY_CCI_SDA"    Loc = "IO_NB_A0";
+NET   "DPHY_CCI_SCL"    Loc = "IO_NB_B0";
+
+## TMDS outputs (fixed supply 2.5V)
+NET   "TMDS_CK_P"       Loc = "IO_EB_A0"; # | lvds_boost=true;
+NET   "TMDS_CK_N"       Loc = "IO_EB_B0"; # | lvds_boost=true;
+NET   "TMDS_D0_P"       Loc = "IO_EB_A2"; # | lvds_boost=true;
+NET   "TMDS_D0_N"       Loc = "IO_EB_B2"; # | lvds_boost=true;
+NET   "TMDS_D1_P"       Loc = "IO_EB_A4"; # | lvds_boost=true;
+NET   "TMDS_D1_N"       Loc = "IO_EB_B4"; # | lvds_boost=true;
+NET   "TMDS_D2_P"       Loc = "IO_EB_A5"; # | lvds_boost=true;
+NET   "TMDS_D2_N"       Loc = "IO_EB_B5"; # | lvds_boost=true;
+
+## Pmod (fixed supply 2.5V)
+NET   "PMODA[0]"        Loc = "IO_SA_B0";
+NET   "PMODA[1]"        Loc = "IO_SA_A0";
+NET   "PMODA[2]"        Loc = "IO_SA_B2";
+NET   "PMODA[3]"        Loc = "IO_SA_A2";
+NET   "PMODA[4]"        Loc = "IO_SA_A1";
+NET   "PMODA[5]"        Loc = "IO_SA_B1";
+NET   "PMODA[6]"        Loc = "IO_SA_A3";
+NET   "PMODA[7]"        Loc = "IO_SA_B3";
+
+NET   "PMODB[0]"        Loc = "IO_SA_B4";
+NET   "PMODB[1]"        Loc = "IO_SA_A4";
+NET   "PMODB[2]"        Loc = "IO_SA_B6";
+NET   "PMODB[3]"        Loc = "IO_SA_A6";
+NET   "PMODB[4]"        Loc = "IO_SA_A5";
+NET   "PMODB[5]"        Loc = "IO_SA_B5";
+NET   "PMODB[6]"        Loc = "IO_SA_A7";
+NET   "PMODB[7]"        Loc = "IO_SA_B7";
+
+NET   "PMODC[0]"        Loc = "IO_SB_B0";
+NET   "PMODC[1]"        Loc = "IO_SB_A0";
+NET   "PMODC[2]"        Loc = "IO_SB_B2";
+NET   "PMODC[3]"        Loc = "IO_SB_A2";
+NET   "PMODC[4]"        Loc = "IO_SB_A1";
+NET   "PMODC[5]"        Loc = "IO_SB_B1";
+NET   "PMODC[6]"        Loc = "IO_SB_A3";
+NET   "PMODC[7]"        Loc = "IO_SB_B3";
+
+NET   "PMODD[0]"        Loc = "IO_SB_B4";
+NET   "PMODD[1]"        Loc = "IO_SB_A4";
+NET   "PMODD[2]"        Loc = "IO_SB_B6";
+NET   "PMODD[3]"        Loc = "IO_SB_A6";
+NET   "PMODD[4]"        Loc = "IO_SB_A5";
+NET   "PMODD[5]"        Loc = "IO_SB_B5";
+NET   "PMODD[6]"        Loc = "IO_SB_A7";
+NET   "PMODD[7]"        Loc = "IO_SB_B7";
+
+## GPIO Bank WA (Misc. Configuration)
+#NET   "cfg_done"        Loc = "IO_WA_B2"; # CFG_DONE
+#NET   "cfg_fail"        Loc = "IO_WA_A2"; # CFG_FAIL (N.C.)
+#NET   "cfg_md[0]"       Loc = "IO_WA_A0";
+#NET   "cfg_md[1]"       Loc = "IO_WA_B0";
+#NET   "cfg_md[2]"       Loc = "IO_WA_A1";
+#NET   "cfg_md[3]"       Loc = "IO_WA_B1";
+#NET   "por_en"          Loc = "IO_WA_A3";
+#NET   "spi_fwd"         Loc = "IO_WA_B5"; # unconnected
+
+## GPIO Bank WA (Serial Flash)
+#NET   "flash_csb"       Loc = "IO_WA_A8";
+#NET   "flash_clk"       Loc = "IO_WA_B8";
+#NET   "flash_io0"       Loc = "IO_WA_B7";
+#NET   "flash_io1"       Loc = "IO_WA_A7";
+#NET   "flash_io2"       Loc = "IO_WA_B6";
+#NET   "flash_io3"       Loc = "IO_WA_A6";
+
+## GPIO Bank WA (JTAG Interface)
+#NET   "jtag_tck"        Loc = "IO_WA_A5";
+#NET   "jtag_tms"        Loc = "IO_WA_B4";
+#NET   "jtag_tdi"        Loc = "IO_WA_A4";
+#NET   "jtag_tdo"        Loc = "IO_WA_B3";
