@@ -63,20 +63,7 @@
           "width": 0.104
         }
       ],
-      "drc_exclusions": [
-        [
-          "footprint_symbol_mismatch|123288725|93284580|313eb15d-7d5e-4b51-98e6-2d219f0ceb16|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
-          "footprint_symbol_mismatch|157290369|93288024|531e83f9-68c9-4b35-b426-82f2e7f423e6|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
-          "footprint_symbol_mismatch|166878000|77216000|fe54dad4-2620-4c62-9a0c-a3720bf0df99|00000000-0000-0000-0000-000000000000",
-          ""
-        ]
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -741,10 +728,10 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "gerber/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "DE10-Nano-CAM.step",
       "svg": "",
       "vrml": ""
     },
