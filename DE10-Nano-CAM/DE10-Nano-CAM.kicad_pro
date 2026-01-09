@@ -48,7 +48,7 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.3
+          "min_clearance": 0.25
         }
       },
       "diff_pair_dimensions": [
@@ -56,9 +56,27 @@
           "gap": 0.0,
           "via_gap": 0.0,
           "width": 0.0
+        },
+        {
+          "gap": 0.14,
+          "via_gap": 0.8,
+          "width": 0.104
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "footprint_symbol_mismatch|123288725|93284580|313eb15d-7d5e-4b51-98e6-2d219f0ceb16|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "footprint_symbol_mismatch|157290369|93288024|531e83f9-68c9-4b35-b426-82f2e7f423e6|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "footprint_symbol_mismatch|166878000|77216000|fe54dad4-2620-4c62-9a0c-a3720bf0df99|00000000-0000-0000-0000-000000000000",
+          ""
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -87,8 +105,8 @@
         "item_on_disabled_layer": "error",
         "items_not_allowed": "error",
         "length_out_of_range": "error",
-        "lib_footprint_issues": "warning",
-        "lib_footprint_mismatch": "warning",
+        "lib_footprint_issues": "ignore",
+        "lib_footprint_mismatch": "ignore",
         "malformed_courtyard": "error",
         "microvia_drill_out_of_range": "error",
         "mirrored_text_on_front_layer": "warning",
@@ -100,7 +118,7 @@
         "padstack": "warning",
         "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
-        "silk_edge_clearance": "warning",
+        "silk_edge_clearance": "ignore",
         "silk_over_copper": "warning",
         "silk_overlap": "warning",
         "skew_out_of_range": "error",
@@ -133,12 +151,12 @@
         "min_microvia_drill": 0.1,
         "min_resolved_spokes": 2,
         "min_silk_clearance": 0.0,
-        "min_text_height": 0.8,
+        "min_text_height": 0.7,
         "min_text_thickness": 0.08,
-        "min_through_hole_diameter": 0.3,
+        "min_through_hole_diameter": 0.2,
         "min_track_width": 0.0,
         "min_via_annular_width": 0.1,
-        "min_via_diameter": 0.5,
+        "min_via_diameter": 0.4,
         "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
@@ -188,19 +206,20 @@
       ],
       "track_widths": [
         0.0,
-        0.2,
+        0.104,
+        0.15,
+        0.17,
         0.3,
-        0.4,
         0.5
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
           "corner_style": 1,
-          "max_amplitude": 1.0,
+          "max_amplitude": 0.5,
           "min_amplitude": 0.2,
           "single_sided": false,
-          "spacing": 1.0
+          "spacing": 0.5
         },
         "diff_pair_skew_defaults": {
           "corner_radius_percentage": 80,
@@ -213,10 +232,10 @@
         "single_track_defaults": {
           "corner_radius_percentage": 80,
           "corner_style": 1,
-          "max_amplitude": 1.0,
+          "max_amplitude": 0.7,
           "min_amplitude": 0.2,
           "single_sided": false,
-          "spacing": 0.6
+          "spacing": 0.2
         }
       },
       "via_dimensions": [
@@ -225,20 +244,16 @@
           "drill": 0.0
         },
         {
-          "diameter": 0.3,
-          "drill": 0.6
-        },
-        {
-          "diameter": 0.4,
-          "drill": 0.8
+          "diameter": 0.45,
+          "drill": 0.2
         },
         {
           "diameter": 0.5,
-          "drill": 1.0
+          "drill": 0.3
         },
         {
-          "diameter": 0.6,
-          "drill": 1.2
+          "diameter": 0.7,
+          "drill": 0.4
         }
       ],
       "zones_allow_external_fillets": false
@@ -506,14 +521,220 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
+      },
+      {
+        "clearance": 0.15,
+        "diff_pair_gap": 0.127,
+        "diff_pair_width": 0.17,
+        "name": "FPGA_Bus",
+        "pcb_color": "rgb(255, 103, 0)",
+        "priority": 1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.15,
+        "via_diameter": 0.5,
+        "via_drill": 0.25
+      },
+      {
+        "clearance": 0.15,
+        "diff_pair_gap": 0.14,
+        "diff_pair_width": 0.104,
+        "name": "HDMI_Diff",
+        "pcb_color": "rgb(167, 0, 255)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.15,
+        "via_diameter": 0.5,
+        "via_drill": 0.25
       }
     ],
     "meta": {
       "version": 4
     },
     "net_colors": null,
-    "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_assignments": {
+      "/CK+": [
+        "HDMI_Diff"
+      ],
+      "/CK-": [
+        "HDMI_Diff"
+      ],
+      "/D0+": [
+        "HDMI_Diff"
+      ],
+      "/D0-": [
+        "HDMI_Diff"
+      ],
+      "/D1+": [
+        "HDMI_Diff"
+      ],
+      "/D1-": [
+        "HDMI_Diff"
+      ],
+      "/D2+": [
+        "HDMI_Diff"
+      ],
+      "/D2-": [
+        "HDMI_Diff"
+      ],
+      "/DATA_0": [
+        "FPGA_Bus"
+      ],
+      "/DATA_1": [
+        "FPGA_Bus"
+      ],
+      "/DATA_10": [
+        "FPGA_Bus"
+      ],
+      "/DATA_11": [
+        "FPGA_Bus"
+      ],
+      "/DATA_12": [
+        "FPGA_Bus"
+      ],
+      "/DATA_13": [
+        "FPGA_Bus"
+      ],
+      "/DATA_14": [
+        "FPGA_Bus"
+      ],
+      "/DATA_15": [
+        "FPGA_Bus"
+      ],
+      "/DATA_16": [
+        "FPGA_Bus"
+      ],
+      "/DATA_17": [
+        "FPGA_Bus"
+      ],
+      "/DATA_18": [
+        "FPGA_Bus"
+      ],
+      "/DATA_19": [
+        "FPGA_Bus"
+      ],
+      "/DATA_2": [
+        "FPGA_Bus"
+      ],
+      "/DATA_20": [
+        "FPGA_Bus"
+      ],
+      "/DATA_22": [
+        "FPGA_Bus"
+      ],
+      "/DATA_23": [
+        "FPGA_Bus"
+      ],
+      "/DATA_24": [
+        "FPGA_Bus"
+      ],
+      "/DATA_25": [
+        "FPGA_Bus"
+      ],
+      "/DATA_26": [
+        "FPGA_Bus"
+      ],
+      "/DATA_27": [
+        "FPGA_Bus"
+      ],
+      "/DATA_28": [
+        "FPGA_Bus"
+      ],
+      "/DATA_29": [
+        "FPGA_Bus"
+      ],
+      "/DATA_3": [
+        "FPGA_Bus"
+      ],
+      "/DATA_30": [
+        "FPGA_Bus"
+      ],
+      "/DATA_31": [
+        "FPGA_Bus"
+      ],
+      "/DATA_32": [
+        "FPGA_Bus"
+      ],
+      "/DATA_33": [
+        "FPGA_Bus"
+      ],
+      "/DATA_4": [
+        "FPGA_Bus"
+      ],
+      "/DATA_5": [
+        "FPGA_Bus"
+      ],
+      "/DATA_6": [
+        "FPGA_Bus"
+      ],
+      "/DATA_7": [
+        "FPGA_Bus"
+      ],
+      "/DATA_8": [
+        "FPGA_Bus"
+      ],
+      "/DATA_9": [
+        "FPGA_Bus"
+      ],
+      "/GPIO_EB_0_N": [
+        "HDMI_Diff"
+      ],
+      "/GPIO_EB_0_P": [
+        "HDMI_Diff"
+      ],
+      "/GPIO_EB_2_N": [
+        "HDMI_Diff"
+      ],
+      "/GPIO_EB_2_P": [
+        "HDMI_Diff"
+      ],
+      "/GPIO_EB_4_N": [
+        "HDMI_Diff"
+      ],
+      "/GPIO_EB_4_P": [
+        "HDMI_Diff"
+      ],
+      "/GPIO_EB_5_N": [
+        "HDMI_Diff"
+      ],
+      "/GPIO_EB_5_P": [
+        "HDMI_Diff"
+      ],
+      "/LVDS0_C_N": [
+        "HDMI_Diff"
+      ],
+      "/LVDS0_C_P": [
+        "HDMI_Diff"
+      ],
+      "/LVDS0_D0_N": [
+        "HDMI_Diff"
+      ],
+      "/LVDS0_D0_P": [
+        "HDMI_Diff"
+      ],
+      "/LVDS0_D1_N": [
+        "HDMI_Diff"
+      ],
+      "/LVDS0_D1_P": [
+        "HDMI_Diff"
+      ],
+      "GND": [
+        "FPGA_Bus"
+      ]
+    },
+    "netclass_patterns": [
+      {
+        "netclass": "HDMI_Diff",
+        "pattern": "Data_*"
+      },
+      {
+        "netclass": "FPGA_Bus",
+        "pattern": "D*"
+      },
+      {
+        "netclass": "FPGA_Bus",
+        "pattern": "CK*"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
