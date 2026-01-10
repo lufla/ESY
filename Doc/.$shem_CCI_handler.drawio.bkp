@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0">
   <diagram name="Seite-1" id="uQxxccPc6kILez6-IRwu">
-    <mxGraphModel dx="2066" dy="1210" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+    <mxGraphModel dx="1722" dy="1008" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -91,10 +91,10 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="6CD1fjqL2f0IMXzz-8Y5-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;gradientDirection=east;" value="Clk" vertex="1">
+        <mxCell id="6CD1fjqL2f0IMXzz-8Y5-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Clk" vertex="1">
           <mxGeometry height="40" width="80" x="200" y="310" as="geometry" />
         </mxCell>
-        <mxCell id="6CD1fjqL2f0IMXzz-8Y5-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;gradientDirection=east;" value="RST_N" vertex="1">
+        <mxCell id="6CD1fjqL2f0IMXzz-8Y5-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="RST_N" vertex="1">
           <mxGeometry height="40" width="80" x="1160" y="190" as="geometry" />
         </mxCell>
         <mxCell id="6CD1fjqL2f0IMXzz-8Y5-18" edge="1" parent="1" source="6CD1fjqL2f0IMXzz-8Y5-16" style="endArrow=classic;html=1;rounded=0;exitX=1.008;exitY=0.69;exitDx=0;exitDy=0;entryX=0.187;entryY=-0.01;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" target="6CD1fjqL2f0IMXzz-8Y5-1" value="">
@@ -136,10 +136,10 @@
             <mxPoint x="1110" y="140" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="6CD1fjqL2f0IMXzz-8Y5-24" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;gradientColor=#97d077;strokeColor=#82b366;gradientDirection=west;" value="Init_done" vertex="1">
+        <mxCell id="6CD1fjqL2f0IMXzz-8Y5-24" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Init_done" vertex="1">
           <mxGeometry height="40" width="80" x="670" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="6CD1fjqL2f0IMXzz-8Y5-25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;gradientColor=#97d077;strokeColor=#82b366;gradientDirection=west;" value="Init_error" vertex="1">
+        <mxCell id="6CD1fjqL2f0IMXzz-8Y5-25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Init_error" vertex="1">
           <mxGeometry height="40" width="80" x="800" y="40" as="geometry" />
         </mxCell>
         <mxCell id="6CD1fjqL2f0IMXzz-8Y5-26" edge="1" parent="1" source="6CD1fjqL2f0IMXzz-8Y5-3" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.24;exitY=-0.011;exitDx=0;exitDy=0;exitPerimeter=0;" target="6CD1fjqL2f0IMXzz-8Y5-24" value="">
@@ -160,10 +160,10 @@
             <mxPoint x="1340" y="570" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="6CD1fjqL2f0IMXzz-8Y5-29" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;gradientColor=#ea6b66;strokeColor=#b85450;gradientDirection=radial;" value="I²C_scl" vertex="1">
+        <mxCell id="6CD1fjqL2f0IMXzz-8Y5-29" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="I²C_scl" vertex="1">
           <mxGeometry height="40" width="80" x="1390" y="590" as="geometry" />
         </mxCell>
-        <mxCell id="6CD1fjqL2f0IMXzz-8Y5-30" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;gradientColor=#ea6b66;strokeColor=#b85450;gradientDirection=radial;" value="I²C_sda" vertex="1">
+        <mxCell id="6CD1fjqL2f0IMXzz-8Y5-30" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="I²C_sda" vertex="1">
           <mxGeometry height="40" width="80" x="1390" y="670" as="geometry" />
         </mxCell>
         <mxCell id="6CD1fjqL2f0IMXzz-8Y5-31" edge="1" parent="1" source="6CD1fjqL2f0IMXzz-8Y5-2" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" target="6CD1fjqL2f0IMXzz-8Y5-30" value="">
