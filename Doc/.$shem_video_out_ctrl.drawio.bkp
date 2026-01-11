@@ -1,0 +1,124 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0">
+  <diagram name="Seite-1" id="7OrsIloJCe-BhNEnTtro">
+    <mxGraphModel dx="2951" dy="1729" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-1" parent="1" style="swimlane;whiteSpace=wrap;html=1;" value="video_output_ctrl" vertex="1">
+          <mxGeometry height="1640" width="1730" x="720" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-2" parent="QPoMGptb98IO_F-lq-Nl-1" style="swimlane;whiteSpace=wrap;html=1;" value="color_balance" vertex="1">
+          <mxGeometry height="450" width="200" x="190" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-3" parent="QPoMGptb98IO_F-lq-Nl-1" style="swimlane;whiteSpace=wrap;html=1;" value="tmds_pre_encoder" vertex="1">
+          <mxGeometry height="140" width="200" x="530" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-4" parent="QPoMGptb98IO_F-lq-Nl-1" style="swimlane;whiteSpace=wrap;html=1;" value="tmds_pre_encoder" vertex="1">
+          <mxGeometry height="140" width="200" x="530" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-5" parent="QPoMGptb98IO_F-lq-Nl-1" style="swimlane;whiteSpace=wrap;html=1;" value="tmds_pre_encoder" vertex="1">
+          <mxGeometry height="140" width="200" x="530" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-10" edge="1" parent="QPoMGptb98IO_F-lq-Nl-1" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="QPoMGptb98IO_F-lq-Nl-3" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="390" y="180" as="sourcePoint" />
+            <mxPoint x="520" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-13" connectable="0" parent="QPoMGptb98IO_F-lq-Nl-10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="RGB_data_cor[23:16]" vertex="1">
+          <mxGeometry relative="1" x="-0.141" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-11" edge="1" parent="QPoMGptb98IO_F-lq-Nl-1" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="390" y="360" as="sourcePoint" />
+            <mxPoint x="530" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-14" connectable="0" parent="QPoMGptb98IO_F-lq-Nl-11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="RGB_data_cor[15:8]" vertex="1">
+          <mxGeometry relative="1" x="-0.13" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-12" edge="1" parent="QPoMGptb98IO_F-lq-Nl-1" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="QPoMGptb98IO_F-lq-Nl-5" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="390" y="520" as="sourcePoint" />
+            <mxPoint x="470" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-15" connectable="0" parent="QPoMGptb98IO_F-lq-Nl-12" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="RGB_data_cor[7:0]" vertex="1">
+          <mxGeometry relative="1" x="-0.0861" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-16" parent="QPoMGptb98IO_F-lq-Nl-1" style="swimlane;whiteSpace=wrap;html=1;" value="pll" vertex="1">
+          <mxGeometry height="200" width="200" x="190" y="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-19" parent="QPoMGptb98IO_F-lq-Nl-16" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="CC_PLL" vertex="1">
+          <mxGeometry height="60" width="120" x="40" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-17" parent="QPoMGptb98IO_F-lq-Nl-1" style="swimlane;whiteSpace=wrap;html=1;" value="vga_core" vertex="1">
+          <mxGeometry height="200" width="200" x="430" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-18" parent="QPoMGptb98IO_F-lq-Nl-1" style="swimlane;whiteSpace=wrap;html=1;" value="dvi_core" vertex="1">
+          <mxGeometry height="200" width="200" x="1000" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-22" edge="1" parent="QPoMGptb98IO_F-lq-Nl-1" source="QPoMGptb98IO_F-lq-Nl-19" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="460" y="1285" />
+              <mxPoint x="460" y="1100" />
+              <mxPoint x="250" y="1100" />
+            </Array>
+            <mxPoint x="530" y="1210" as="sourcePoint" />
+            <mxPoint x="250" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-23" connectable="0" parent="QPoMGptb98IO_F-lq-Nl-22" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rotation=-90;" value="clk_pix" vertex="1">
+          <mxGeometry relative="1" x="0.8748" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-24" edge="1" parent="QPoMGptb98IO_F-lq-Nl-1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="460" y="1100" as="sourcePoint" />
+            <mxPoint x="460" y="980" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-25" connectable="0" parent="QPoMGptb98IO_F-lq-Nl-24" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rotation=-90;" value="clk_pix" vertex="1">
+          <mxGeometry relative="1" x="0.2497" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="RGB_data_in" vertex="1">
+          <mxGeometry height="60" width="120" x="410" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="RGB_data_valid" vertex="1">
+          <mxGeometry height="60" width="120" x="410" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-8" edge="1" parent="1" source="QPoMGptb98IO_F-lq-Nl-6" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="610" y="600" as="sourcePoint" />
+            <mxPoint x="910" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-9" edge="1" parent="1" source="QPoMGptb98IO_F-lq-Nl-7" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="600" y="760" as="sourcePoint" />
+            <mxPoint x="910" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-20" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="clk_ref" vertex="1">
+          <mxGeometry height="60" width="120" x="410" y="1650" as="geometry" />
+        </mxCell>
+        <mxCell id="QPoMGptb98IO_F-lq-Nl-21" edge="1" parent="1" source="QPoMGptb98IO_F-lq-Nl-20" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="QPoMGptb98IO_F-lq-Nl-19" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="600" y="1510" as="sourcePoint" />
+            <mxPoint x="650" y="1460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

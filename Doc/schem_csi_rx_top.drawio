@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0">
   <diagram name="Seite-1" id="MZHSJTH3fTFYsFuVXEAx">
-    <mxGraphModel dx="4132" dy="2420" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+    <mxGraphModel dx="3443" dy="2017" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -663,7 +663,7 @@
         <mxCell id="CR3dkdahEIIUhZiDebCa-132" parent="CR3dkdahEIIUhZiDebCa-1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillStyle=auto;strokeColor=none;fillColor=#007FFF;" value="" vertex="1">
           <mxGeometry height="7" width="7" x="447" y="831" as="geometry" />
         </mxCell>
-        <mxCell id="CR3dkdahEIIUhZiDebCa-133" parent="CR3dkdahEIIUhZiDebCa-1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillStyle=auto;strokeColor=none;fillColor=#000000;" value="" vertex="1">
+        <mxCell id="CR3dkdahEIIUhZiDebCa-133" parent="CR3dkdahEIIUhZiDebCa-1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillStyle=auto;strokeColor=none;fillColor=#00CC66;" value="" vertex="1">
           <mxGeometry height="7" width="7" x="1356" y="727" as="geometry" />
         </mxCell>
         <mxCell id="CR3dkdahEIIUhZiDebCa-134" parent="CR3dkdahEIIUhZiDebCa-1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillStyle=auto;strokeColor=none;fillColor=#FF3333;" value="" vertex="1">
