@@ -1,0 +1,194 @@
+## csi_top.ccf
+
+NET   "clk_ext"         Loc = "IO_SB_A8" | SCHMITT_TRIGGER=true;
+
+## HS differential inputs (default 2.5V VDD)
+NET   "DPHY_CK_HS_P"    Loc = "IO_SA_A1";
+NET   "DPHY_CK_HS_N"    Loc = "IO_SA_B1";
+NET   "DPHY_D1_HS_P"    Loc = "IO_SA_A2";
+NET   "DPHY_D1_HS_N"    Loc = "IO_SA_B2";
+NET   "DPHY_D0_HS_P"    Loc = "IO_SA_A3";
+NET   "DPHY_D0_HS_N"    Loc = "IO_SA_B3";
+
+## Not used for ESY
+## LP single-ended inputs (default 1.2V VDD)
+#NET   "DPHY_CK_LP_P"    Loc = "IO_NA_A0";
+#NET   "DPHY_CK_LP_N"    Loc = "IO_NA_B0";
+#NET   "DPHY_D1_LP_P"    Loc = "IO_NA_A1";
+#NET   "DPHY_D1_LP_N"    Loc = "IO_NA_B1";
+#NET   "DPHY_D0_LP_P"    Loc = "IO_NA_A4";
+#NET   "DPHY_D0_LP_N"    Loc = "IO_NA_B4";
+
+## I2C pair (for CCI) (default 2.5V VDD)
+NET   "DPHY_CCI_SDA"    Loc = "IO_SA_B5";
+NET   "DPHY_CCI_SCL"    Loc = "IO_SA_A5";
+
+## ESY
+## CSI_enable signal to camera
+NET	  "DPHY_CCI_enable"	Loc = "IO_SA_B4";
+
+## TMDS outputs (fixed supply 2.5V)
+NET   "TMDS_CK_P"       Loc = "IO_SB_A7"; # | lvds_boost=true;
+NET   "TMDS_CK_N"       Loc = "IO_SB_B7"; # | lvds_boost=true;
+NET   "TMDS_D0_P"       Loc = "IO_SB_A4"; # | lvds_boost=true;
+NET   "TMDS_D0_N"       Loc = "IO_SB_B4"; # | lvds_boost=true;
+NET   "TMDS_D1_P"       Loc = "IO_SB_A5"; # | lvds_boost=true;
+NET   "TMDS_D1_N"       Loc = "IO_SB_B5"; # | lvds_boost=true;
+NET   "TMDS_D2_P"       Loc = "IO_SB_A6"; # | lvds_boost=true;
+NET   "TMDS_D2_N"       Loc = "IO_SB_B6"; # | lvds_boost=true;
+
+## Not used for ESY
+## Pmod (fixed supply 2.5V)
+#NET   "PMODA[0]"        Loc = "IO_SA_B0";
+#NET   "PMODA[1]"        Loc = "IO_SA_A0";
+#NET   "PMODA[2]"        Loc = "IO_SA_B2";
+#NET   "PMODA[3]"        Loc = "IO_SA_A2";
+#NET   "PMODA[4]"        Loc = "IO_SA_A1";
+#NET   "PMODA[5]"        Loc = "IO_SA_B1";
+#NET   "PMODA[6]"        Loc = "IO_SA_A3";
+#NET   "PMODA[7]"        Loc = "IO_SA_B3";
+
+#NET   "PMODB[0]"        Loc = "IO_SA_B4";
+#NET   "PMODB[1]"        Loc = "IO_SA_A4";
+#NET   "PMODB[2]"        Loc = "IO_SA_B6";
+#NET   "PMODB[3]"        Loc = "IO_SA_A6";
+#NET   "PMODB[4]"        Loc = "IO_SA_A5";
+#NET   "PMODB[5]"        Loc = "IO_SA_B5";
+#NET   "PMODB[6]"        Loc = "IO_SA_A7";
+#NET   "PMODB[7]"        Loc = "IO_SA_B7";
+
+#NET   "PMODC[0]"        Loc = "IO_SB_B0";
+#NET   "PMODC[1]"        Loc = "IO_SB_A0";
+#NET   "PMODC[2]"        Loc = "IO_SB_B2";
+#NET   "PMODC[3]"        Loc = "IO_SB_A2";
+#NET   "PMODC[4]"        Loc = "IO_SB_A1";
+#NET   "PMODC[5]"        Loc = "IO_SB_B1";
+#NET   "PMODC[6]"        Loc = "IO_SB_A3";
+#NET   "PMODC[7]"        Loc = "IO_SB_B3";
+
+#NET   "PMODD[0]"        Loc = "IO_SB_B4";
+#NET   "PMODD[1]"        Loc = "IO_SB_A4";
+#NET   "PMODD[2]"        Loc = "IO_SB_B6";
+#NET   "PMODD[3]"        Loc = "IO_SB_A6";
+#NET   "PMODD[4]"        Loc = "IO_SB_A5";
+#NET   "PMODD[5]"        Loc = "IO_SB_B5";
+#NET   "PMODD[6]"        Loc = "IO_SB_A7";
+#NET   "PMODD[7]"        Loc = "IO_SB_B7";
+
+## GPIO Bank WA (Misc. Configuration)
+#NET   "cfg_done"        Loc = "IO_WA_B2"; # CFG_DONE
+#NET   "cfg_fail"        Loc = "IO_WA_A2"; # CFG_FAIL (N.C.)
+#NET   "cfg_md[0]"       Loc = "IO_WA_A0";
+#NET   "cfg_md[1]"       Loc = "IO_WA_B0";
+#NET   "cfg_md[2]"       Loc = "IO_WA_A1";
+#NET   "cfg_md[3]"       Loc = "IO_WA_B1";
+#NET   "por_en"          Loc = "IO_WA_A3";
+#NET   "spi_fwd"         Loc = "IO_WA_B5"; # unconnected
+
+## GPIO Bank WA (Serial Flash)
+#NET   "flash_csb"       Loc = "IO_WA_A8";
+#NET   "flash_clk"       Loc = "IO_WA_B8";
+#NET   "flash_io0"       Loc = "IO_WA_B7";
+#NET   "flash_io1"       Loc = "IO_WA_A7";
+#NET   "flash_io2"       Loc = "IO_WA_B6";
+#NET   "flash_io3"       Loc = "IO_WA_A6";
+
+## GPIO Bank WA (JTAG Interface)
+#NET   "jtag_tck"        Loc = "IO_WA_A5";
+#NET   "jtag_tms"        Loc = "IO_WA_B4";
+#NET   "jtag_tdi"        Loc = "IO_WA_A4";
+#NET   "jtag_tdo"        Loc = "IO_WA_B3";
+
+
+## ESY: Connection to SD-RAM
+#NET	  "SDRAM_nCS"		Loc = "IO_WB_A0";
+#NET	  "SDRAM_nWE"		Loc = "IO_WB_B0";
+#NET	  "SDRAM_nRAS"		Loc = "IO_WB_A6";
+#NET	  "SDRAM_nCAS"		Loc = "IO_WB_B6";
+#NET	  "SDRAM_CLK"		Loc = "IO_WC_A1";
+#NET	  "SDRAM_CKE"		Loc = "IO_WC_B1";
+#NET	  "SDRAM_DQM0"		Loc = "IO_WB_A3";
+#NET	  "SDRAM_DQM1"		Loc = "IO_WC_B5";
+#NET   	  "SDRAM_BA0"		Loc = "IO_WB_A7";
+#NET	  "SDRAM_BA1"		Loc = "IO_WB_A8";
+
+#NET	  "SDRAM_A0"		Loc = "IO_WB_B8";
+#NET	  "SDRAM_A1"		Loc = "IO_NA_A0";
+#NET	  "SDRAM_A2"		Loc = "IO_NA_B0";
+#NET	  "SDRAM_A3"		Loc = "IO_WB_A1";
+#NET	  "SDRAM_A4"		Loc = "IO_WC_B8";
+#NET	  "SDRAM_A5"		Loc = "IO_WC_B7";
+#NET	  "SDRAM_A6"		Loc = "IO_WB_B7";
+#NET	  "SDRAM_A7"		Loc = "IO_WC_B6";
+#NET	  "SDRAM_A8"		Loc = "IO_WC_A7";
+#NET	  "SDRAM_A9"		Loc = "IO_WC_B0";
+#NET	  "SDRAM_A10"		Loc = "IO_NA_B1";
+#NET	  "SDRAM_A11"		Loc = "IO_WC_A0";
+#NET	  "SDRAM_A12"		Loc = "IO_WC_A8";
+
+#NET	  "SDRAM_D0"		Loc = "IO_WB_B4";
+#NET	  "SDRAM_D1"		Loc = "IO_WB_B2";
+#NET	  "SDRAM_D2"		Loc = "IO_WB_A4";
+#NET	  "SDRAM_D3"		Loc = "IO_WB_A2";
+#NET	  "SDRAM_D4"		Loc = "IO_WB_A5";
+#NET	  "SDRAM_D5"		Loc = "IO_WB_B5";
+#NET	  "SDRAM_D6"		Loc = "IO_WB_B1";
+#NET	  "SDRAM_D7"		Loc = "IO_WB_B3";
+#NET	  "SDRAM_D8"		Loc = "IO_WC_A6";
+#NET	  "SDRAM_D9"		Loc = "IO_WC_B4";
+#NET	  "SDRAM_D10"		Loc = "IO_WC_A5";
+#NET	  "SDRAM_D11"		Loc = "IO_WC_A4";
+#NET	  "SDRAM_D12"		Loc = "IO_WC_B3";
+#NET	  "SDRAM_D13"		Loc = "IO_WC_B2";
+#NET	  "SDRAM_D14"		Loc = "IO_WC_A2";
+#NET	  "SDRAM_D15"		Loc = "IO_WC_A3";
+
+
+## ESY:
+## Interface to DE10-Nano
+#NET	  "DATA_0"			Loc = "IO_NB_A8";
+#NET	  "DATA_1"			Loc = "IO_NB_B8";
+#NET	  "DATA_2"			Loc = "IO_NB_A6";
+#NET	  "DATA_3"			Loc = "IO_NB_B6";
+#NET	  "DATA_4"			Loc = "IO_NB_B5";
+#NET	  "DATA_5"			Loc = "IO_NB_B3";
+#NET	  "DATA_6"			Loc = "IO_NB_A1";
+#NET	  "DATA_7"			Loc = "IO_NB_B1";
+#NET	  "DATA_8"			Loc = "IO_NB_B8";
+#NET	  "DATA_9"			Loc = "IO_NA_A8";
+#NET	  "DATA_10"			Loc = "IO_NA_A6";
+#NET	  "DATA_11"			Loc = "IO_NA_B6";
+#NET	  "DATA_12"			Loc = "IO_NA_A5";
+#NET	  "DATA_13"			Loc = "IO_NA_B5";
+#NET   	  "DATA_14"			Loc = "IO_NB_A2";
+#NET	  "DATA_15"			Loc = "IO_NB_B2";
+#NET	  "DATA_16"			Loc = "IO_NB_A0";
+#NET	  "DATA_17"			Loc = "IO_NB_B0";
+#NET	  "DATA_18"			Loc = "IO_NA_B7";
+#NET	  "DATA_19"			Loc = "IO_NA_A7";
+#NET	  "DATA_20"			Loc = "IO_NA_B4";
+#NET	  "DATA_21"			Loc = "IO_NA_A4";
+#NET	  "DATA_22"			Loc = "IO_SA_B3";
+#NET	  "DATA_23"			Loc = "IO_SA_A3";
+#NET	  "DATA_24"			Loc = "IO_SA_B2";
+#NET   	  "DATA_25"			Loc = "IO_SA_A2";
+#NET	  "DATA_26"			Loc = "IO_SA_B1";
+#NET	  "DATA_27"			Loc = "IO_SA_A1";
+#NET	  "DATA_28"			Loc = "IO_SA_B0";
+#NET	  "DATA_29"			Loc = "IO_SA_A0";
+#NET	  "DATA_30"			Loc = "IO_NB_A7";
+#NET	  "DATA_31"			Loc = "IO_NB_B7";
+#NET	  "DATA_32"			Loc = "IO_NB_A4";
+#NET	  "DATA_33"			Loc = "IO_NB_B4";
+
+#NET	  "DE10_SDA"		Loc = "IO_EA_A5";
+#NET	  "DE10_SCL"		Loc = "IO_EA_B5";
+
+## ESY:
+## SD card interface
+#NET	  "SD_CMD"			Loc = "IO_NA_B3";
+#NET	  "SD_CLK"			Loc = "IO_NA_A3";
+#NET	  "SD_DAT0"			Loc = "IO_NA_A1";
+#NET	  "SD_DAT1"			Loc = "IO_NB_A5";
+#NET	  "SD_DAT2"			Loc = "IO_NA_B2";
+#NET	  "SD_DAT3"			Loc = "IO_NA_A2";
