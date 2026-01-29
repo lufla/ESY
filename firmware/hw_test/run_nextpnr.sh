@@ -9,5 +9,4 @@ nextpnr-himbaechel \
 	--json ${NETLIST}.json \
 	-o ccf=${SRC_DIR}/${TOP}.ccf \
 	-o out=impl.txt \
-	--router router2 \
-	--gui
+	--router router2
