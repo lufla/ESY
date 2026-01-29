@@ -20,6 +20,9 @@ module csi_top #(
     output TMDS_D0_P, TMDS_D0_N,
     output TMDS_D1_P, TMDS_D1_N,
     output TMDS_D2_P, TMDS_D2_N,
+	
+	// User LEDs, former PMODC
+	output [7:0] LED
     
     // Pmod
     //output [7:0] PMODA,

@@ -20,12 +20,14 @@ module csi_top #(
     output TMDS_D0_P, TMDS_D0_N,
     output TMDS_D1_P, TMDS_D1_N,
     output TMDS_D2_P, TMDS_D2_N,
+	
+	output [7:0] LED
     
     // Pmod
-    output [7:0] PMODA,
-    output [7:0] PMODB,
-    output [7:0] PMODC,
-    output [7:0] PMODD
+    //output [7:0] PMODA,
+    //output [7:0] PMODB,
+    //output [7:0] PMODC,
+    //output [7:0] PMODD
 );
     wire f0, f1;
 	
