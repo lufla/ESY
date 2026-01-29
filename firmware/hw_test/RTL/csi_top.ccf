@@ -195,11 +195,11 @@ NET   "TMDS_D2_N"       Loc = "IO_SB_B6"; # | lvds_boost=true;
 
 ## ESY:
 ## User LEDs
-#NET   "LED[0]"        Loc = "IO_SB_B0";
-#NET   "LED[1]"        Loc = "IO_SB_A0";
-#NET   "LED[2]"        Loc = "IO_SB_B2";
-#NET   "LED[3]"        Loc = "IO_SB_A2";
-#NET   "LED[4]"        Loc = "IO_SB_A1";
-#NET   "LED[5]"        Loc = "IO_SB_B1";
-#NET   "LED[6]"        Loc = "IO_SB_A3";
-#NET   "LED[7]"        Loc = "IO_SB_B3";
+NET   "LED[0]"        Loc = "IO_SB_B0";
+NET   "LED[1]"        Loc = "IO_SB_A0";
+NET   "LED[2]"        Loc = "IO_SB_B2";
+NET   "LED[3]"        Loc = "IO_SB_A2";
+NET   "LED[4]"        Loc = "IO_SB_A1";
+NET   "LED[5]"        Loc = "IO_SB_B1";
+NET   "LED[6]"        Loc = "IO_SB_A3";
+NET   "LED[7]"        Loc = "IO_SB_B3";

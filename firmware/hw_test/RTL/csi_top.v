@@ -31,10 +31,11 @@ module csi_top #(
 );
     wire f0, f1;
 	
-    assign PMODA = {6'b0, f1, f0, 1'b0, csi_byte_clk};
-    assign PMODB = csi_checksum_good[7:0];
-    assign PMODC = {5'b0, checksum_err_seen ,i2c_done, csi_raw_valid};
-    assign PMODD = csi_checksum_err[7:0];
+	assign LED = 8'b0;
+    //assign PMODA = {6'b0, f1, f0, 1'b0, csi_byte_clk};
+    //assign PMODB = csi_checksum_good[7:0];
+    //assign PMODC = {5'b0, checksum_err_seen ,i2c_done, csi_raw_valid};
+    //assign PMODD = csi_checksum_err[7:0];
 
     wire rst_ref_n, rst_csi;
 	assign rst_csi = ~rst_ref_n;
