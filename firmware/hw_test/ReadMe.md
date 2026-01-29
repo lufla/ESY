@@ -16,3 +16,9 @@ find RTL -type f \( -name '*.v' -o -name '*.sv' \) > files.f
 
 Dann müsst ihr noch "gtkwave csi_top_tb.vcd csi_top.gtkw" aufrufen um die Waveforms sehen zu können.
 Das entspricht so dem, was wir in der Vorlesung hatten, nur mit OpenSource Tools statt Quartus.
+
+# Weitere Schritte
+
+Es gibt zwei weitere shellscripte. 'run_nextpnr.sh' ruft das Place and Route Tool auf. Dieses Tool nimmt die von Yosys erzeugte Netzliste, platziert die Logikelemente auf dem realen Chip und erzeugt die benötigten Signalverbindungen.
+
+Mit 'run_gmpack.sh' wird dann die von NextPnR erzeugte Textdatei in einen Bitstream übertragen. Dieser kann dann auf die Hardware übertragen werden.
