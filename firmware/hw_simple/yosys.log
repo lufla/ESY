@@ -1,0 +1,992 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.60+78 (git sha1 156752695, clang++ 18.1.8 -fPIC -O3)
+
+-- Running command `
+        read_verilog_file_list -f files.f;
+        synth_gatemate             -top csi_top             -luttree             -nomx8;
+        write_json netlist.json;
+        write_verilog netlist.v
+    ' --
+
+1. Executing Verilog-2005 frontend: /home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v
+Parsing Verilog input from `/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v' to AST representation.
+verilog frontend filename /home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v
+Storing AST representation for module `$abstract\csi_top'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/mark/oss-cad-suite/hw_simple/RTL/clkrst_gen.v
+Parsing Verilog input from `/home/mark/oss-cad-suite/hw_simple/RTL/clkrst_gen.v' to AST representation.
+verilog frontend filename /home/mark/oss-cad-suite/hw_simple/RTL/clkrst_gen.v
+Storing AST representation for module `$abstract\clkrst_gen'.
+Successfully finished Verilog frontend.
+
+3. Executing SYNTH_GATEMATE pass.
+
+3.1. Executing Verilog-2005 frontend: /home/mark/oss-cad-suite/lib/../share/yosys/gatemate/cells_sim.v
+Parsing Verilog input from `/home/mark/oss-cad-suite/lib/../share/yosys/gatemate/cells_sim.v' to AST representation.
+verilog frontend filename /home/mark/oss-cad-suite/lib/../share/yosys/gatemate/cells_sim.v
+Generating RTLIL representation for module `\CC_IBUF'.
+Generating RTLIL representation for module `\CC_OBUF'.
+Generating RTLIL representation for module `\CC_TOBUF'.
+Generating RTLIL representation for module `\CC_IOBUF'.
+Generating RTLIL representation for module `\CC_LVDS_IBUF'.
+Generating RTLIL representation for module `\CC_LVDS_OBUF'.
+Generating RTLIL representation for module `\CC_LVDS_TOBUF'.
+Generating RTLIL representation for module `\CC_LVDS_IOBUF'.
+Generating RTLIL representation for module `\CC_IDDR'.
+Generating RTLIL representation for module `\CC_ODDR'.
+Generating RTLIL representation for module `\CC_DFF'.
+Generating RTLIL representation for module `\CC_DLT'.
+Generating RTLIL representation for module `\CC_LUT1'.
+Generating RTLIL representation for module `\CC_LUT2'.
+Generating RTLIL representation for module `\CC_LUT3'.
+Generating RTLIL representation for module `\CC_LUT4'.
+Generating RTLIL representation for module `\CC_MX2'.
+Generating RTLIL representation for module `\CC_MX4'.
+Generating RTLIL representation for module `\CC_MX8'.
+Generating RTLIL representation for module `\CC_ADDF'.
+Generating RTLIL representation for module `\CC_MULT'.
+Generating RTLIL representation for module `\CC_BUFG'.
+Generating RTLIL representation for module `\CC_BRAM_20K'.
+Generating RTLIL representation for module `\CC_BRAM_40K'.
+Generating RTLIL representation for module `\CC_FIFO_40K'.
+Generating RTLIL representation for module `\CC_L2T4'.
+Generating RTLIL representation for module `\CC_L2T5'.
+Successfully finished Verilog frontend.
+
+3.2. Executing Verilog-2005 frontend: /home/mark/oss-cad-suite/lib/../share/yosys/gatemate/cells_bb.v
+Parsing Verilog input from `/home/mark/oss-cad-suite/lib/../share/yosys/gatemate/cells_bb.v' to AST representation.
+verilog frontend filename /home/mark/oss-cad-suite/lib/../share/yosys/gatemate/cells_bb.v
+Generating RTLIL representation for module `\CC_PLL'.
+Generating RTLIL representation for module `\CC_PLL_ADV'.
+Generating RTLIL representation for module `\CC_SERDES'.
+Generating RTLIL representation for module `\CC_CFG_CTRL'.
+Generating RTLIL representation for module `\CC_USR_RSTN'.
+Successfully finished Verilog frontend.
+
+3.3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.4. Executing AST frontend in derive mode using pre-parsed AST for module `\csi_top'.
+Generating RTLIL representation for module `\csi_top'.
+Warning: wire '\LED' is assigned in a block at /home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:30.3-30.14.
+Warning: wire '\LED' is assigned in a block at /home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:35.4-35.24.
+
+3.4.1. Analyzing design hierarchy..
+Top module:  \csi_top
+
+3.4.2. Executing AST frontend in derive mode using pre-parsed AST for module `\clkrst_gen'.
+Generating RTLIL representation for module `\clkrst_gen'.
+
+3.4.3. Analyzing design hierarchy..
+Top module:  \csi_top
+Used module:     \clkrst_gen
+
+3.4.4. Analyzing design hierarchy..
+Top module:  \csi_top
+Used module:     \clkrst_gen
+Removing unused module `$abstract\clkrst_gen'.
+Removing unused module `$abstract\csi_top'.
+Removed 2 unused modules.
+
+3.5. Executing PROC pass (convert processes to netlists).
+
+3.5.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.5.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:25$14 in module csi_top.
+Removed a total of 0 dead cases.
+
+3.5.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 4 assignments to connections.
+
+3.5.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\clkrst_gen.$proc$/home/mark/oss-cad-suite/hw_simple/RTL/clkrst_gen.v:8$26'.
+  Set init value: \rst_ref_cnt = 6'000000
+Found init rule in `\csi_top.$proc$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:23$21'.
+  Set init value: \led_count = 8'00000000
+Found init rule in `\csi_top.$proc$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:22$20'.
+  Set init value: \counter = 22'0000000000000000000000
+
+3.5.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.5.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~2 debug messages>
+
+3.5.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\clkrst_gen.$proc$/home/mark/oss-cad-suite/hw_simple/RTL/clkrst_gen.v:8$26'.
+Creating decoders for process `\clkrst_gen.$proc$/home/mark/oss-cad-suite/hw_simple/RTL/clkrst_gen.v:11$23'.
+Creating decoders for process `\csi_top.$proc$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:23$21'.
+Creating decoders for process `\csi_top.$proc$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:22$20'.
+Creating decoders for process `\csi_top.$proc$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:25$14'.
+     1/3: $0\counter[21:0]
+     2/3: $0\led_count[7:0]
+     3/3: $0\LED[7:0]
+
+3.5.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.5.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\clkrst_gen.\rst_ref_cnt' using process `\clkrst_gen.$proc$/home/mark/oss-cad-suite/hw_simple/RTL/clkrst_gen.v:11$23'.
+  created $dff cell `$procdff$45' with positive edge clock.
+Creating register for signal `\csi_top.\LED' using process `\csi_top.$proc$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:25$14'.
+  created $dff cell `$procdff$46' with positive edge clock.
+Creating register for signal `\csi_top.\counter' using process `\csi_top.$proc$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:25$14'.
+  created $dff cell `$procdff$47' with positive edge clock.
+Creating register for signal `\csi_top.\led_count' using process `\csi_top.$proc$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:25$14'.
+  created $dff cell `$procdff$48' with positive edge clock.
+
+3.5.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.5.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `clkrst_gen.$proc$/home/mark/oss-cad-suite/hw_simple/RTL/clkrst_gen.v:8$26'.
+Removing empty process `clkrst_gen.$proc$/home/mark/oss-cad-suite/hw_simple/RTL/clkrst_gen.v:11$23'.
+Removing empty process `csi_top.$proc$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:23$21'.
+Removing empty process `csi_top.$proc$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:22$20'.
+Found and cleaned up 2 empty switches in `\csi_top.$proc$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:25$14'.
+Removing empty process `csi_top.$proc$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:25$14'.
+Cleaned up 2 empty switches.
+
+3.5.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clkrst_gen.
+Optimizing module csi_top.
+<suppressed ~3 debug messages>
+
+3.6. Executing FLATTEN pass (flatten design).
+Deleting now unused module clkrst_gen.
+<suppressed ~1 debug messages>
+
+3.7. Executing TRIBUF pass.
+
+3.8. Executing DEMINOUT pass (demote inout ports to input or output).
+
+3.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module csi_top.
+
+3.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \csi_top..
+Removed 1 unused cells and 15 unused wires.
+<suppressed ~2 debug messages>
+
+3.11. Executing CHECK pass (checking for obvious problems).
+Checking module csi_top...
+Found and reported 0 problems.
+
+3.12. Executing OPT pass (performing simple optimizations).
+
+3.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module csi_top.
+
+3.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\csi_top'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+3.12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \csi_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~9 debug messages>
+
+3.12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \csi_top.
+Performed a total of 0 changes.
+
+3.12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\csi_top'.
+Removed a total of 0 cells.
+
+3.12.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \csi_top..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+3.12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module csi_top.
+
+3.12.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.12.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \csi_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~9 debug messages>
+
+3.12.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \csi_top.
+Performed a total of 0 changes.
+
+3.12.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\csi_top'.
+Removed a total of 0 cells.
+
+3.12.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.12.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \csi_top..
+
+3.12.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module csi_top.
+
+3.12.16. Finished fast OPT passes. (There is nothing left to do.)
+
+3.13. Executing FSM pass (extract and optimize FSM).
+
+3.13.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+3.13.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+3.13.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+3.13.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \csi_top..
+
+3.13.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+3.13.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+3.13.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+3.13.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+3.14. Executing OPT pass (performing simple optimizations).
+
+3.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module csi_top.
+
+3.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\csi_top'.
+Removed a total of 0 cells.
+
+3.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \csi_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~9 debug messages>
+
+3.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \csi_top.
+Performed a total of 0 changes.
+
+3.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\csi_top'.
+Removed a total of 0 cells.
+
+3.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$48 ($dff) from module csi_top (D = $procmux$34_Y, Q = \led_count, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$50 ($sdff) from module csi_top (D = $add$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:34$17_Y [7:0], Q = \led_count).
+Adding SRST signal on $procdff$47 ($dff) from module csi_top (D = $add$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:37$19_Y [21:0], Q = \counter, rval = 22'0000000000000000000000).
+Adding SRST signal on $procdff$46 ($dff) from module csi_top (D = $procmux$40_Y, Q = \LED, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$57 ($sdff) from module csi_top (D = $add$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:34$17_Y [7:0], Q = \LED).
+
+3.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \csi_top..
+Removed 6 unused cells and 6 unused wires.
+<suppressed ~7 debug messages>
+
+3.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module csi_top.
+
+3.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \csi_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \csi_top.
+Performed a total of 0 changes.
+
+3.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\csi_top'.
+Removed a total of 0 cells.
+
+3.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \csi_top..
+
+3.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module csi_top.
+
+3.14.16. Finished fast OPT passes. (There is nothing left to do.)
+
+3.15. Executing WREDUCE pass (reducing word size of cells).
+Removed top 14 bits (of 22) from port B of cell csi_top.$eq$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:32$16 ($eq).
+Removed top 31 bits (of 32) from port B of cell csi_top.$add$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:34$17 ($add).
+Removed top 24 bits (of 32) from port Y of cell csi_top.$add$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:34$17 ($add).
+Removed top 31 bits (of 32) from port B of cell csi_top.$add$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:37$19 ($add).
+Removed top 10 bits (of 32) from port Y of cell csi_top.$add$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:37$19 ($add).
+Removed top 5 bits (of 6) from port B of cell csi_top.$flatten\clkrst_gen_inst.$add$/home/mark/oss-cad-suite/hw_simple/RTL/clkrst_gen.v:12$25 ($add).
+Removed top 24 bits (of 32) from wire csi_top.$add$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:34$17_Y.
+Removed top 10 bits (of 32) from wire csi_top.$add$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:37$19_Y.
+Removed top 5 bits (of 6) from wire csi_top.$flatten\clkrst_gen_inst.$logic_not$/home/mark/oss-cad-suite/hw_simple/RTL/clkrst_gen.v:12$24_Y.
+
+3.16. Executing PEEPOPT pass (run peephole optimizers).
+
+3.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \csi_top..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+3.18. Executing MUXPACK pass ($mux cell cascades to $pmux).
+Converted 0 (p)mux cells into 0 pmux cells.
+
+3.19. Executing SHARE pass (SAT-based resource sharing).
+
+3.20. Executing TECHMAP pass (map to technology primitives).
+
+3.20.1. Executing Verilog-2005 frontend: /home/mark/oss-cad-suite/lib/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/home/mark/oss-cad-suite/lib/../share/yosys/cmp2lut.v' to AST representation.
+verilog frontend filename /home/mark/oss-cad-suite/lib/../share/yosys/cmp2lut.v
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+3.20.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+3.21. Executing OPT_EXPR pass (perform const folding).
+Optimizing module csi_top.
+
+3.22. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \csi_top..
+
+3.23. Executing TECHMAP pass (map to technology primitives).
+
+3.23.1. Executing Verilog-2005 frontend: /home/mark/oss-cad-suite/lib/../share/yosys/gatemate/mul_map.v
+Parsing Verilog input from `/home/mark/oss-cad-suite/lib/../share/yosys/gatemate/mul_map.v' to AST representation.
+verilog frontend filename /home/mark/oss-cad-suite/lib/../share/yosys/gatemate/mul_map.v
+Generating RTLIL representation for module `\$__MULMXN'.
+Successfully finished Verilog frontend.
+
+3.23.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+3.24. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module csi_top:
+  creating $macc model for $add$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:34$17 ($add).
+  creating $macc model for $add$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:37$19 ($add).
+  creating $macc model for $flatten\clkrst_gen_inst.$add$/home/mark/oss-cad-suite/hw_simple/RTL/clkrst_gen.v:12$25 ($add).
+  creating $alu model for $macc $flatten\clkrst_gen_inst.$add$/home/mark/oss-cad-suite/hw_simple/RTL/clkrst_gen.v:12$25.
+  creating $alu model for $macc $add$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:37$19.
+  creating $alu model for $macc $add$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:34$17.
+  creating $alu cell for $add$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:34$17: $auto$alumacc.cc:512:replace_alu$63
+  creating $alu cell for $add$/home/mark/oss-cad-suite/hw_simple/RTL/csi_top.v:37$19: $auto$alumacc.cc:512:replace_alu$66
+  creating $alu cell for $flatten\clkrst_gen_inst.$add$/home/mark/oss-cad-suite/hw_simple/RTL/clkrst_gen.v:12$25: $auto$alumacc.cc:512:replace_alu$69
+  created 3 $alu and 0 $macc cells.
+
+3.25. Executing OPT pass (performing simple optimizations).
+
+3.25.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module csi_top.
+
+3.25.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\csi_top'.
+Removed a total of 0 cells.
+
+3.25.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \csi_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.25.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \csi_top.
+Performed a total of 0 changes.
+
+3.25.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\csi_top'.
+Removed a total of 0 cells.
+
+3.25.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.25.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \csi_top..
+
+3.25.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module csi_top.
+
+3.25.9. Finished fast OPT passes. (There is nothing left to do.)
+
+3.26. Executing MEMORY pass.
+
+3.26.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+3.26.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+3.26.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+3.26.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+3.26.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+3.26.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \csi_top..
+
+3.26.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+3.26.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+3.26.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \csi_top..
+
+3.26.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.27. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \csi_top..
+
+3.28. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+3.29. Executing TECHMAP pass (map to technology primitives).
+
+3.29.1. Executing Verilog-2005 frontend: /home/mark/oss-cad-suite/lib/../share/yosys/gatemate/brams_map.v
+Parsing Verilog input from `/home/mark/oss-cad-suite/lib/../share/yosys/gatemate/brams_map.v' to AST representation.
+verilog frontend filename /home/mark/oss-cad-suite/lib/../share/yosys/gatemate/brams_map.v
+Generating RTLIL representation for module `\$__CC_BRAM_TDP_'.
+Generating RTLIL representation for module `\$__CC_BRAM_SDP_'.
+Successfully finished Verilog frontend.
+
+3.29.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+3.30. Executing OPT pass (performing simple optimizations).
+
+3.30.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module csi_top.
+
+3.30.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\csi_top'.
+Removed a total of 0 cells.
+
+3.30.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.30.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \csi_top..
+
+3.30.5. Finished fast OPT passes.
+
+3.31. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+3.32. Executing OPT pass (performing simple optimizations).
+
+3.32.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module csi_top.
+
+3.32.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\csi_top'.
+Removed a total of 0 cells.
+
+3.32.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \csi_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.32.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \csi_top.
+Performed a total of 0 changes.
+
+3.32.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\csi_top'.
+Removed a total of 0 cells.
+
+3.32.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.32.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \csi_top..
+
+3.32.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module csi_top.
+
+3.32.9. Finished fast OPT passes. (There is nothing left to do.)
+
+3.33. Executing TECHMAP pass (map to technology primitives).
+
+3.33.1. Executing Verilog-2005 frontend: /home/mark/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/mark/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+verilog frontend filename /home/mark/oss-cad-suite/lib/../share/yosys/techmap.v
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `\$connect'.
+Generating RTLIL representation for module `\$input_port'.
+Successfully finished Verilog frontend.
+
+3.33.2. Executing Verilog-2005 frontend: /home/mark/oss-cad-suite/lib/../share/yosys/gatemate/arith_map.v
+Parsing Verilog input from `/home/mark/oss-cad-suite/lib/../share/yosys/gatemate/arith_map.v' to AST representation.
+verilog frontend filename /home/mark/oss-cad-suite/lib/../share/yosys/gatemate/arith_map.v
+Generating RTLIL representation for module `\_80_gatemate_alu'.
+Successfully finished Verilog frontend.
+
+3.33.3. Continuing TECHMAP pass.
+Using template $paramod$32efbfac1c4dc57230cf86180788fdfd12e3b511\_80_gatemate_alu for cells of type $alu.
+Using template $paramod$080e6a70eb8bfa1ccf22d9718e795074645029a4\_80_gatemate_alu for cells of type $alu.
+Using template $paramod$c3cd1564c35d873179656addd6052d7ea8b6d991\_80_gatemate_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $pos.
+No more expansions possible.
+<suppressed ~161 debug messages>
+
+3.34. Executing OPT pass (performing simple optimizations).
+
+3.34.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module csi_top.
+<suppressed ~109 debug messages>
+
+3.34.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\csi_top'.
+<suppressed ~24 debug messages>
+Removed a total of 8 cells.
+
+3.34.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.34.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \csi_top..
+Removed 32 unused cells and 55 unused wires.
+<suppressed ~33 debug messages>
+
+3.34.5. Finished fast OPT passes.
+
+3.35. Executing IOPADMAP pass (mapping inputs/outputs to IO-PAD cells).
+Mapping port csi_top.LED using CC_OBUF.
+Mapping port csi_top.clk_ext using CC_IBUF.
+Removed 0 unused cells and 1 unused wires.
+
+3.36. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \csi_top..
+
+3.37. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+3.38. Executing TECHMAP pass (map to technology primitives).
+
+3.38.1. Executing Verilog-2005 frontend: /home/mark/oss-cad-suite/lib/../share/yosys/gatemate/reg_map.v
+Parsing Verilog input from `/home/mark/oss-cad-suite/lib/../share/yosys/gatemate/reg_map.v' to AST representation.
+verilog frontend filename /home/mark/oss-cad-suite/lib/../share/yosys/gatemate/reg_map.v
+Generating RTLIL representation for module `\$_DFFE_xxxx_'.
+Generating RTLIL representation for module `\$_DLATCH_xxx_'.
+Successfully finished Verilog frontend.
+
+3.38.2. Continuing TECHMAP pass.
+Using template $paramod$7b2151c3bb8e318976eb0e31a556e245b4d15ccd\$_DFFE_xxxx_ for cells of type $_DFFE_PP0P_.
+Using template $paramod$0ea0c0ecb89aa8a394fc59f557ec4597a0d47f80\$_DFFE_xxxx_ for cells of type $_DFFE_PP0P_.
+No more expansions possible.
+<suppressed ~96 debug messages>
+
+3.39. Executing OPT_EXPR pass (perform const folding).
+Optimizing module csi_top.
+
+3.40. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+3.41. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \csi_top..
+Removed 0 unused cells and 264 unused wires.
+<suppressed ~1 debug messages>
+
+3.42. Executing MUXCOVER pass (mapping to wider MUXes).
+Covering MUX trees in module csi_top..
+  Treeifying 54 MUXes:
+    Found tree with 2 MUXes at root $auto$rtlil.cc:3568:MuxGate$498.
+    Found tree with 2 MUXes at root $auto$rtlil.cc:3568:MuxGate$494.
+    Found tree with 2 MUXes at root $auto$rtlil.cc:3568:MuxGate$490.
+    Found tree with 2 MUXes at root $auto$rtlil.cc:3568:MuxGate$486.
+    Found tree with 2 MUXes at root $auto$rtlil.cc:3568:MuxGate$482.
+    Found tree with 2 MUXes at root $auto$rtlil.cc:3568:MuxGate$478.
+    Found tree with 2 MUXes at root $auto$rtlil.cc:3568:MuxGate$474.
+    Found tree with 2 MUXes at root $auto$rtlil.cc:3568:MuxGate$470.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$466.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$464.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$462.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$460.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$458.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$456.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$454.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$452.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$450.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$448.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$446.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$444.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$442.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$440.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$438.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$436.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$434.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$432.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$430.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$428.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$426.
+    Found tree with 1 MUXes at root $auto$rtlil.cc:3568:MuxGate$424.
+    Found tree with 2 MUXes at root $auto$rtlil.cc:3568:MuxGate$422.
+    Found tree with 2 MUXes at root $auto$rtlil.cc:3568:MuxGate$418.
+    Found tree with 2 MUXes at root $auto$rtlil.cc:3568:MuxGate$414.
+    Found tree with 2 MUXes at root $auto$rtlil.cc:3568:MuxGate$410.
+    Found tree with 2 MUXes at root $auto$rtlil.cc:3568:MuxGate$406.
+    Found tree with 2 MUXes at root $auto$rtlil.cc:3568:MuxGate$402.
+    Found tree with 2 MUXes at root $auto$rtlil.cc:3568:MuxGate$398.
+    Found tree with 2 MUXes at root $auto$rtlil.cc:3568:MuxGate$394.
+    Finished treeification: Found 38 trees.
+  Covering trees:
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$498: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$494: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$490: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$486: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$482: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$478: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$474: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$470: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$466: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$464: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$462: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$460: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$458: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$456: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$454: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$452: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$450: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$448: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$446: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$444: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$442: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$440: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$438: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$436: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$434: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$432: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$430: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$428: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$426: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$424: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$422: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$418: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$414: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$410: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$406: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$402: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$398: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $auto$rtlil.cc:3568:MuxGate$394: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+  Added a total of 0 decoder MUXes.
+<suppressed ~935 debug messages>
+
+3.43. Executing OPT pass (performing simple optimizations).
+
+3.43.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module csi_top.
+<suppressed ~16 debug messages>
+
+3.43.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\csi_top'.
+Removed a total of 0 cells.
+
+3.43.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \csi_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.43.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \csi_top.
+Performed a total of 0 changes.
+
+3.43.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\csi_top'.
+Removed a total of 0 cells.
+
+3.43.6. Executing OPT_SHARE pass.
+
+3.43.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.43.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \csi_top..
+
+3.43.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module csi_top.
+
+3.43.10. Finished fast OPT passes. (There is nothing left to do.)
+
+3.44. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+3.45. Executing TECHMAP pass (map to technology primitives).
+
+3.45.1. Executing Verilog-2005 frontend: /home/mark/oss-cad-suite/lib/../share/yosys/gatemate/mux_map.v
+Parsing Verilog input from `/home/mark/oss-cad-suite/lib/../share/yosys/gatemate/mux_map.v' to AST representation.
+verilog frontend filename /home/mark/oss-cad-suite/lib/../share/yosys/gatemate/mux_map.v
+Generating RTLIL representation for module `\$_MUX8_'.
+Generating RTLIL representation for module `\$_MUX4_'.
+Successfully finished Verilog frontend.
+
+3.45.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+3.46. Executing ABC pass (technology mapping using ABC).
+
+3.46.1. Extracting gate netlist of module `\csi_top' to `<abc-temp-dir>/input.blif'..
+
+3.46.1.1. Executed ABC.
+Extracted 88 gates and 163 wires to a netlist network with 74 inputs and 39 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Jan  6 2026 02:48:41)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <yosys-exe-dir>/../share/yosys/gatemate/lut_tree_cells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+
+3.46.1.2. Re-integrating ABC results.
+ABC RESULTS:          $__CC2_A cells:        2
+ABC RESULTS:          $__CC2_O cells:        6
+ABC RESULTS:         $__CC3_AA cells:       31
+ABC RESULTS:         $__CC3_AO cells:       16
+ABC RESULTS:         $__CC3_OO cells:        5
+ABC RESULTS:        $__CC4_AAA cells:        5
+ABC RESULTS:      $__CC5_AAA_A cells:        2
+ABC RESULTS:         $__CC_NOT cells:       22
+ABC RESULTS:        internal signals:       50
+ABC RESULTS:           input signals:       74
+ABC RESULTS:          output signals:       39
+Removing temp directory.
+Removing global temp directory.
+
+3.47. Executing TECHMAP pass (map to technology primitives).
+
+3.47.1. Executing Verilog-2005 frontend: /home/mark/oss-cad-suite/lib/../share/yosys/gatemate/lut_tree_map.v
+Parsing Verilog input from `/home/mark/oss-cad-suite/lib/../share/yosys/gatemate/lut_tree_map.v' to AST representation.
+verilog frontend filename /home/mark/oss-cad-suite/lib/../share/yosys/gatemate/lut_tree_map.v
+Generating RTLIL representation for module `\$__ZERO'.
+Generating RTLIL representation for module `\$__ONE'.
+Generating RTLIL representation for module `\$__CC_BUF'.
+Generating RTLIL representation for module `\$__CC_MUX'.
+Generating RTLIL representation for module `\$__CC2_A'.
+Generating RTLIL representation for module `\$__CC3_A_O'.
+Generating RTLIL representation for module `\$__CC3_A_X'.
+Generating RTLIL representation for module `\$__CC2_O'.
+Generating RTLIL representation for module `\$__CC3_O_A'.
+Generating RTLIL representation for module `\$__CC3_O_X'.
+Generating RTLIL representation for module `\$__CC2_X'.
+Generating RTLIL representation for module `\$__CC3_X_A'.
+Generating RTLIL representation for module `\$__CC3_X_O'.
+Generating RTLIL representation for module `\$__CC3_AA'.
+Generating RTLIL representation for module `\$__CC4_AA_O'.
+Generating RTLIL representation for module `\$__CC4_AA_X'.
+Generating RTLIL representation for module `\$__CC3_OO'.
+Generating RTLIL representation for module `\$__CC4_OO_A'.
+Generating RTLIL representation for module `\$__CC4_OO_X'.
+Generating RTLIL representation for module `\$__CC3_XX'.
+Generating RTLIL representation for module `\$__CC4_XX_A'.
+Generating RTLIL representation for module `\$__CC4_XX_O'.
+Generating RTLIL representation for module `\$__CC3_AO'.
+Generating RTLIL representation for module `\$__CC4_AO_A'.
+Generating RTLIL representation for module `\$__CC4_AO_O'.
+Generating RTLIL representation for module `\$__CC4_AO_X'.
+Generating RTLIL representation for module `\$__CC3_OA'.
+Generating RTLIL representation for module `\$__CC4_OA_A'.
+Generating RTLIL representation for module `\$__CC4_OA_O'.
+Generating RTLIL representation for module `\$__CC4_OA_X'.
+Generating RTLIL representation for module `\$__CC3_AX'.
+Generating RTLIL representation for module `\$__CC4_AX_A'.
+Generating RTLIL representation for module `\$__CC4_AX_O'.
+Generating RTLIL representation for module `\$__CC4_AX_X'.
+Generating RTLIL representation for module `\$__CC3_XA'.
+Generating RTLIL representation for module `\$__CC4_XA_A'.
+Generating RTLIL representation for module `\$__CC4_XA_O'.
+Generating RTLIL representation for module `\$__CC4_XA_X'.
+Generating RTLIL representation for module `\$__CC4_AAA'.
+Generating RTLIL representation for module `\$__CC5_AAA_A'.
+Generating RTLIL representation for module `\$__CC5_AAA_O'.
+Generating RTLIL representation for module `\$__CC5_AAA_X'.
+Generating RTLIL representation for module `\$__CC4_AXA'.
+Generating RTLIL representation for module `\$__CC5_AXA_A'.
+Generating RTLIL representation for module `\$__CC5_AXA_O'.
+Generating RTLIL representation for module `\$__CC5_AXA_X'.
+Generating RTLIL representation for module `\$__CC4_XAX'.
+Generating RTLIL representation for module `\$__CC5_XAX_A'.
+Generating RTLIL representation for module `\$__CC5_XAX_O'.
+Generating RTLIL representation for module `\$__CC5_XAX_X'.
+Generating RTLIL representation for module `\$__CC4_AAX'.
+Generating RTLIL representation for module `\$__CC5_AAX_A'.
+Generating RTLIL representation for module `\$__CC5_AAX_O'.
+Generating RTLIL representation for module `\$__CC5_AAX_X'.
+Generating RTLIL representation for module `\$__CC4_AXX'.
+Generating RTLIL representation for module `\$__CC5_AXX_A'.
+Generating RTLIL representation for module `\$__CC5_AXX_O'.
+Generating RTLIL representation for module `\$__CC5_AXX_X'.
+Generating RTLIL representation for module `\$__CC4_XXX'.
+Generating RTLIL representation for module `\$__CC5_XXX_A'.
+Generating RTLIL representation for module `\$__CC5_XXX_O'.
+Generating RTLIL representation for module `\$__CC5_XXX_X'.
+Generating RTLIL representation for module `\$__CC4_AAO'.
+Generating RTLIL representation for module `\$__CC5_AAO_A'.
+Generating RTLIL representation for module `\$__CC5_AAO_O'.
+Generating RTLIL representation for module `\$__CC5_AAO_X'.
+Generating RTLIL representation for module `\$__CC4_AOA'.
+Generating RTLIL representation for module `\$__CC5_AOA_A'.
+Generating RTLIL representation for module `\$__CC5_AOA_O'.
+Generating RTLIL representation for module `\$__CC5_AOA_X'.
+Generating RTLIL representation for module `\$__CC4_AOX'.
+Generating RTLIL representation for module `\$__CC5_AOX_A'.
+Generating RTLIL representation for module `\$__CC5_AOX_O'.
+Generating RTLIL representation for module `\$__CC5_AOX_X'.
+Successfully finished Verilog frontend.
+
+3.47.2. Continuing TECHMAP pass.
+Using template \$__CC2_O for cells of type $__CC2_O.
+Using template \$__CC3_OO for cells of type $__CC3_OO.
+Using template \$__CC4_AAA for cells of type $__CC4_AAA.
+Using template \$__CC3_AA for cells of type $__CC3_AA.
+Using template \$__CC5_AAA_A for cells of type $__CC5_AAA_A.
+Using template \$__CC2_A for cells of type $__CC2_A.
+Using template \$__CC3_AO for cells of type $__CC3_AO.
+No more expansions possible.
+<suppressed ~143 debug messages>
+
+3.48. Executing GATEMATE_FOLDINV pass (folding LUT tree inverters).
+
+3.49. Executing TECHMAP pass (map to technology primitives).
+
+3.49.1. Executing Verilog-2005 frontend: /home/mark/oss-cad-suite/lib/../share/yosys/gatemate/inv_map.v
+Parsing Verilog input from `/home/mark/oss-cad-suite/lib/../share/yosys/gatemate/inv_map.v' to AST representation.
+verilog frontend filename /home/mark/oss-cad-suite/lib/../share/yosys/gatemate/inv_map.v
+Generating RTLIL representation for module `\$__CC_NOT'.
+Successfully finished Verilog frontend.
+
+3.49.2. Continuing TECHMAP pass.
+Using template \$__CC_NOT for cells of type $__CC_NOT.
+No more expansions possible.
+<suppressed ~25 debug messages>
+Removed 23 unused cells and 472 unused wires.
+
+3.50. Executing TECHMAP pass (map to technology primitives).
+
+3.50.1. Executing Verilog-2005 frontend: /home/mark/oss-cad-suite/lib/../share/yosys/gatemate/lut_map.v
+Parsing Verilog input from `/home/mark/oss-cad-suite/lib/../share/yosys/gatemate/lut_map.v' to AST representation.
+verilog frontend filename /home/mark/oss-cad-suite/lib/../share/yosys/gatemate/lut_map.v
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+3.50.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+3.51. Executing CLKBUFMAP pass (inserting clock buffers).
+Inserting CC_BUFG on csi_top.clkrst_gen_inst.clk_ref[0].
+
+3.52. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `csi_top'. Setting top module to csi_top.
+
+3.52.1. Analyzing design hierarchy..
+Top module:  \csi_top
+
+3.52.2. Analyzing design hierarchy..
+Top module:  \csi_top
+Removed 0 unused modules.
+
+3.53. Printing statistics.
+
+=== csi_top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       92 wires
+      231 wire bits
+        6 public wires
+       46 public wire bits
+        2 ports
+        9 port bits
+      159 cells
+        1   $scopeinfo
+       36   CC_ADDF
+        1   CC_BUFG
+       44   CC_DFF
+        1   CC_IBUF
+       58   CC_L2T4
+        2   CC_L2T5
+        8   CC_LUT2
+        8   CC_OBUF
+
+3.54. Executing CHECK pass (checking for obvious problems).
+Checking module csi_top...
+Found and reported 0 problems.
+
+3.55. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \csi_top..
+Removed 1 unused cells and 0 unused wires.
+<suppressed ~1 debug messages>
+
+4. Executing JSON backend.
+
+5. Executing Verilog backend.
+
+5.1. Executing BMUXMAP pass.
+
+5.2. Executing DEMUXMAP pass.
+Dumping module `\csi_top'.
+
+Warnings: 2 unique messages, 2 total
+End of script. Logfile hash: ba263e90bb, CPU: user 0.16s system 0.02s, MEM: 27.25 MB peak
+Yosys 0.60+78 (git sha1 156752695, clang++ 18.1.8 -fPIC -O3)
+Time spent: 41% 1x abc (0 sec), 25% 17x read_verilog (0 sec), ...
