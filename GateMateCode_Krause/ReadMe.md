@@ -16,5 +16,9 @@ Damit diese Scripte funktionieren muss nach Änderungen eine neue Fileliste erst
 find RTL -type f \( -name '*.v' -o -name '*.sv' \) > files.f
 ```
 
-Dann müsst ihr noch "gtkwave csi_top_tb.vcd csi_top.gtkw" aufrufen um die Waveforms sehen zu können.
+Dann müsst ihr noch 
+```console
+gtkwave csi_top_tb.vcd csi_top.gtkw
+```
+aufrufen um die Waveforms sehen zu können.
 Das entspricht so dem, was wir in der Vorlesung hatten, nur mit OpenSource Tools statt Quartus.
