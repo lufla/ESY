@@ -123,8 +123,8 @@ module INIT_IMX219 (
         6'd21: register_addresses <=  16'h016D;
         6'd22: register_addresses <=  16'h016E;
         6'd23: register_addresses <=  16'h016F;
-
 		//end of registers for resolution setting
+        
         6'd24: register_addresses <= 16'h0170;
         6'd25: register_addresses <= 16'h0171;
         6'd26: register_addresses <= 16'h0174;
@@ -133,8 +133,8 @@ module INIT_IMX219 (
 		//registers for output data format
         6'd28: register_addresses <= 16'h018C;
         6'd29: register_addresses <= 16'h018D;
-
 		//end of registers for output data format
+
         6'd30: register_addresses <= 16'h0301;
         6'd31: register_addresses <= 16'h0303;
         6'd32: register_addresses <= 16'h0306;
@@ -163,8 +163,8 @@ module INIT_IMX219 (
         6'd53: register_addresses <= 16'h0625;
         6'd54: register_addresses <= 16'h0626;
         6'd55: register_addresses <= 16'h0627;
-
-		//end of registers for test pattern size
+        //end of registers for test pattern size
+        
         6'd56: register_addresses <= 16'h0158;	//digital gain MSB
         6'd57: register_addresses <= 16'h0159;	//digital gain LSB
         6'd58: register_addresses <= 16'h0157;	//analogue gain
@@ -203,16 +203,18 @@ module INIT_IMX219 (
         6'd21: register_data <= 8'h80;
         6'd22: register_data <= 8'h01;
         6'd23: register_data <= 8'hE0;
-
 		//end of settings for resolution
+
         6'd24: register_data <= 8'h01;
         6'd25: register_data <= 8'h01;
         6'd26: register_data <= 8'h00;	//BINNING (0 for no binning)
         6'd27: register_data <= 8'h00;	//BINNING (0 for no binning)
+
 		//output data format settings (0A0A for RAW10, 0808 for RAW8)
         6'd28: register_data <= 8'h08;
         6'd29: register_data <= 8'h08;
 		//end of output data format settings
+
         6'd30: register_data <= 8'h04;	//VTPXCK_DIV
         6'd31: register_data <= 8'h01;
         6'd32: register_data <= 8'h00;
@@ -236,13 +238,13 @@ module INIT_IMX219 (
         6'd50: register_data <= 8'h00;
         6'd51: register_data <= 8'h00;
 
-       //settings for test pattern size
+        //settings for test pattern size
  	    6'd52: register_data <= 8'h02;	//width MSByte
         6'd53: register_data <= 8'h80;	//width LSByte
         6'd54: register_data <= 8'h01;	//height MSByte
         6'd55: register_data <= 8'hE0;	//height LSByte
-
         //end of settings for test pattern size
+
 		6'd56: register_data <= 8'h01; //digital gain MSB 1
         6'd57: register_data <= 8'h00; //digital gain LSB 0
         6'd58: register_data <= 8'h00;	//analogue gain off
