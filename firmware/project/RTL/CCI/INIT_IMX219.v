@@ -98,7 +98,7 @@ module INIT_IMX219 (
     if (read_enable)
       case (init_step)
         6'd0: register_addresses <= 16'h0103; // software reset
-        6'd1: register_addresses <= 16'h1042; // defect correction
+        6'd1: register_addresses <= 16'h02A0; // defect correction
         6'd2: register_addresses <= 16'h0100; // mode select
         6'd3: register_addresses <= 16'h0100;
         6'd4: register_addresses <= 16'h0114;
@@ -124,7 +124,7 @@ module INIT_IMX219 (
         6'd22: register_addresses <=  16'h016E;
         6'd23: register_addresses <=  16'h016F;
 		//end of registers for resolution setting
-        
+
         6'd24: register_addresses <= 16'h0170;
         6'd25: register_addresses <= 16'h0171;
         6'd26: register_addresses <= 16'h0174;
@@ -151,8 +151,8 @@ module INIT_IMX219 (
         6'd43: register_addresses <= 16'h0607;	//test image blue LSB
 		6'd44: register_addresses <= 16'h0608;	//test image green(B) MSB
 		6'd45: register_addresses <= 16'h0609;	//test image green(B) LSB
-        6'd46: register_addresses <= 16'h0600;	//tp mode
-        6'd47: register_addresses <= 16'h0601;	//tp mode
+        6'd46: register_addresses <= 16'h0600;	//test pattern mode
+        6'd47: register_addresses <= 16'h0601;	//test pattern mode
         6'd48: register_addresses <= 16'h0620;
         6'd49: register_addresses <= 16'h0621;
         6'd50: register_addresses <= 16'h0622;
@@ -178,7 +178,7 @@ module INIT_IMX219 (
     if (read_enable)
       case (init_step)
         6'd0: register_data <= 8'h01; // software reset
-        6'd1: register_data <= 8'h00; // defect correction OFF
+        6'd1: register_data <= 8'h00; // defect correction 0
         6'd2: register_data <= 8'h00; // mode select: standby
         6'd3: register_data <= 0;
         6'd4: register_data <= 1;
@@ -231,8 +231,8 @@ module INIT_IMX219 (
         6'd43: register_data <= 8'h00;
 		6'd44: register_data <= 8'h00; //monochrome test image green(B) MSB
 		6'd45: register_data <= 8'h00;
-        6'd46: register_data <= 8'h00;  //tp mode (always 0)
-        6'd47: register_data <= 8'h00;	//tp mode
+        6'd46: register_data <= 8'h00;  //test pattern mode 0
+        6'd47: register_data <= 8'h00;	//test pattern mode 0
         6'd48: register_data <= 8'h00;
         6'd49: register_data <= 8'h00;
         6'd50: register_data <= 8'h00;
