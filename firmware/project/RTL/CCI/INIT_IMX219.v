@@ -142,7 +142,7 @@ module INIT_IMX219 (
         6'd34: register_addresses <= 16'h0309;	//OPPXCK_DIV apparently this is relevant for data format setting
         6'd35: register_addresses <= 16'h030B;
         6'd36: register_addresses <= 16'h030C;  //PLL_OP_MPY_MSB (clock multiplier for D-PHY clk)
-        6'd37: register_addresses <= 16'h030D; //PLL_OP_MPY_LSB 
+        6'd37: register_addresses <= 16'h030D;  //PLL_OP_MPY_LSB 
         6'd38: register_addresses <= 16'h0602;	//monochrome test image red MSB
         6'd39: register_addresses <= 16'h0603;	//test image red LSB
         6'd40: register_addresses <= 16'h0604;	//test image green(R) MSB
@@ -170,7 +170,9 @@ module INIT_IMX219 (
         6'd58: register_addresses <= 16'h0157;	//analogue gain
         6'd59: register_addresses <= 16'h015A; //integration time MSB
         6'd60: register_addresses <= 16'h015B; //integration time LSB
-        6'd61: register_addresses <= 16'h0100;  //last entry. "start stream" command
+        6'd61: register_addresses <= 16'hD1EA; //dark level adjust pedestal MSB
+        6'd62: register_addresses <= 16'hD1EA; //dark level adjust pedestal LSB
+        6'd63: register_addresses <= 16'h0100;  //last entry. "start stream" command
         default: register_addresses <= 0;  //default address is 0
       endcase
 
@@ -250,7 +252,9 @@ module INIT_IMX219 (
         6'd58: register_data <= 8'h00;	//analogue gain off
         6'd59: register_data <= 8'h03;	//integration time MSB
         6'd60: register_data <= 8'h5A;	//integration time LSB
-        6'd61: register_data <= 8'h01;  //last entry. This is the "start stream" command
+        6'd61: register_data <= 8'h00;	//dark level adjust pedestal MSB 0
+        6'd62: register_data <= 8'h00;	//dark level adjust pedestal MSB 40
+        6'd63: register_data <= 8'h01;  //last entry. This is the "start stream" command
         default: register_data <= 0;  //default address is 0
       endcase
 
@@ -261,7 +265,7 @@ module INIT_IMX219 (
   always @(posedge clk) begin
     if (run_init) begin
       if (step_increment) init_step <= init_step + 1;  //go to next step on request from top_module
-      if (init_step == 6'd62)
+      if (init_step == 6'd64)
         complete <= 1;  
     end else begin
       init_step <= 0;     
