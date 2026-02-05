@@ -167,7 +167,7 @@ module INIT_IMX219 (
 		//end of registers for test pattern size
         6'd56: register_addresses <= 16'h0158;	//dig gain glb
         6'd57: register_addresses <= 16'h0159;	//dig gain glb
-        6'd58: register_addresses <= 16'h0157;	//ana gain glb
+        6'd58: register_addresses <= 16'h0157;	//analogue gain
         6'd59: register_addresses <= 16'h015A; //integration time MSB
         6'd60: register_addresses <= 16'h015B; //integration time LSB
         6'd61: register_addresses <= 16'h0100;  //last entry. "start stream" command
@@ -244,7 +244,7 @@ module INIT_IMX219 (
         //end of settings for test pattern size
 		6'd56: register_data <= 8'h01; //dig gain glb
         6'd57: register_data <= 8'h0F; //dig gain glb	(prev value: 00)
-        6'd58: register_data <= 8'hAE;	//ana gain glb	(prev value: 80)
+        6'd58: register_data <= 8'h00;	//analogue gain off
         6'd59: register_data <= 8'h03;	//integration time MSB
         6'd60: register_data <= 8'h5A;	//integration time LSB
         6'd61: register_data <= 8'h01;  //last entry. This is the "start stream" command
