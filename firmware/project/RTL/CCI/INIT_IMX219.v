@@ -213,15 +213,15 @@ module INIT_IMX219 (
         6'd27: register_data <= 8'h00;	//BINNING (0 for no binning)
 
 		//output data format settings (0A0A for RAW10, 0808 for RAW8)
-        6'd28: register_data <= 8'h08;
-        6'd29: register_data <= 8'h08;
+        6'd28: register_data <= 8'h0A;
+        6'd29: register_data <= 8'h0A;
 		//end of output data format settings
 
         6'd30: register_data <= 8'h04;	//VTPXCK_DIV
         6'd31: register_data <= 8'h01;
         6'd32: register_data <= 8'h00;
         6'd33: register_data <= 8'h2E;	//PLL_VT_MPY_LSB
-        6'd34: register_data <= 8'h08;	//this must be "08" for RAW8, "0A" RAW10 
+        6'd34: register_data <= 8'h0A;	//this must be "08" for RAW8, "0A" RAW10 
         6'd35: register_data <= 8'h01;
         6'd36: register_data <= 8'h00; //PLL_OP_MPY_LSB
         6'd37: register_data <= 8'h32; //PLL_OP_MPY_LSB
