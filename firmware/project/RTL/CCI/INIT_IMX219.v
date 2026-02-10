@@ -171,7 +171,7 @@ module INIT_IMX219 (
         6'd59: register_addresses <= 16'h015A; //integration time MSB
         6'd60: register_addresses <= 16'h015B; //integration time LSB
         6'd61: register_addresses <= 16'hD1EA; //dark level adjust pedestal MSB
-        6'd62: register_addresses <= 16'hD1EA; //dark level adjust pedestal LSB
+        6'd62: register_addresses <= 16'hD1EB; //dark level adjust pedestal LSB
         6'd63: register_addresses <= 16'h0100;  //last entry. "start stream" command
         default: register_addresses <= 0;  //default address is 0
       endcase
@@ -192,19 +192,19 @@ module INIT_IMX219 (
         6'd10: register_data <= 8'h0E;	//LINE_LEN_MSB
         6'd11: register_data <= 8'h02;	//LINE_LEN_LSB	
 
-		//start of settings for resolution
-        6'd12: register_data <= 8'h03;	//x start MSB
-        6'd13: register_data <= 8'hE8;
-        6'd14: register_data <= 8'h06;	//x end MSB
-        6'd15: register_data <= 8'h68;	
-        6'd16: register_data <= 8'h02;	//y start MSB
-        6'd17: register_data <= 8'hEE;	
-        6'd18: register_data <= 8'h04;	//y end MSB
-        6'd19: register_data <= 8'hCE;	
-        6'd20: register_data <= 8'h02;
-        6'd21: register_data <= 8'h80;
-        6'd22: register_data <= 8'h01;
-        6'd23: register_data <= 8'hE0;
+		//start of settings for resolution (Full Sensor)
+        6'd12: register_data <= 8'h00;	//x start MSB (0, 0)
+        6'd13: register_data <= 8'h00;
+        6'd14: register_data <= 8'h0C;	//x end MSB (3280 px - 1)
+        6'd15: register_data <= 8'hCF;	
+        6'd16: register_data <= 8'h00;	//y start MSB (0, 0)
+        6'd17: register_data <= 8'h00;	
+        6'd18: register_data <= 8'h09;	//y end MSB (2464)
+        6'd19: register_data <= 8'h9F;	
+        6'd20: register_data <= 8'h0C;  //output size (x)
+        6'd21: register_data <= 8'hD0;
+        6'd22: register_data <= 8'h09;  //output size (y)
+        6'd23: register_data <= 8'hA0;
 		//end of settings for resolution
 
         6'd24: register_data <= 8'h01;
@@ -253,7 +253,7 @@ module INIT_IMX219 (
         6'd59: register_data <= 8'h03;	//integration time MSB
         6'd60: register_data <= 8'h5A;	//integration time LSB
         6'd61: register_data <= 8'h00;	//dark level adjust pedestal MSB 0
-        6'd62: register_data <= 8'h00;	//dark level adjust pedestal MSB 40
+        6'd62: register_data <= 8'h00;	//dark level adjust pedestal MSB (default 40)
         6'd63: register_data <= 8'h01;  //last entry. This is the "start stream" command
         default: register_data <= 0;  //default address is 0
       endcase
