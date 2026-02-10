@@ -3,12 +3,12 @@
 NET   "clk_ext"         Loc = "IO_SB_A8" | SCHMITT_TRIGGER=true;
 
 ## HS differential inputs (default 2.5V VDD)
-NET   "DPHY_CK_HS_P"    Loc = "IO_SA_A1";
-NET   "DPHY_CK_HS_N"    Loc = "IO_SA_B1";
-NET   "DPHY_D1_HS_P"    Loc = "IO_SA_A2";
-NET   "DPHY_D1_HS_N"    Loc = "IO_SA_B2";
-NET   "DPHY_D0_HS_P"    Loc = "IO_SA_A3";
-NET   "DPHY_D0_HS_N"    Loc = "IO_SA_B3";
+#NET   "DPHY_CK_HS_P"    Loc = "IO_SA_A1";
+#NET   "DPHY_CK_HS_N"    Loc = "IO_SA_B1";
+#NET   "DPHY_D1_HS_P"    Loc = "IO_SA_A2";
+#NET   "DPHY_D1_HS_N"    Loc = "IO_SA_B2";
+#NET   "DPHY_D0_HS_P"    Loc = "IO_SA_A3";
+#NET   "DPHY_D0_HS_N"    Loc = "IO_SA_B3";
 
 ## Not used for ESY
 ## LP single-ended inputs (default 1.2V VDD)
@@ -20,22 +20,22 @@ NET   "DPHY_D0_HS_N"    Loc = "IO_SA_B3";
 #NET   "DPHY_D0_LP_N"    Loc = "IO_NA_B4";
 
 ## I2C pair (for CCI) (default 2.5V VDD)
-NET   "DPHY_CCI_SDA"    Loc = "IO_SA_B5";
-NET   "DPHY_CCI_SCL"    Loc = "IO_SA_A5";
+#NET   "DPHY_CCI_SDA"    Loc = "IO_SA_B5";
+#NET   "DPHY_CCI_SCL"    Loc = "IO_SA_A5";
 
 ## ESY
 ## CSI_enable signal to camera
-NET	  "DPHY_CCI_enable"	Loc = "IO_SA_B4";
+#NET	  "DPHY_CCI_enable"	Loc = "IO_SA_B4";
 
 ## TMDS outputs (fixed supply 2.5V)
-NET   "TMDS_CK_P"       Loc = "IO_SB_A7"; # | lvds_boost=true;
-NET   "TMDS_CK_N"       Loc = "IO_SB_B7"; # | lvds_boost=true;
-NET   "TMDS_D0_P"       Loc = "IO_SB_A4"; # | lvds_boost=true;
-NET   "TMDS_D0_N"       Loc = "IO_SB_B4"; # | lvds_boost=true;
-NET   "TMDS_D1_P"       Loc = "IO_SB_A5"; # | lvds_boost=true;
-NET   "TMDS_D1_N"       Loc = "IO_SB_B5"; # | lvds_boost=true;
-NET   "TMDS_D2_P"       Loc = "IO_SB_A6"; # | lvds_boost=true;
-NET   "TMDS_D2_N"       Loc = "IO_SB_B6"; # | lvds_boost=true;
+#NET   "TMDS_CK_P"       Loc = "IO_SB_A7"; # | lvds_boost=true;
+#NET   "TMDS_CK_N"       Loc = "IO_SB_B7"; # | lvds_boost=true;
+#NET   "TMDS_D0_P"       Loc = "IO_SB_A4"; # | lvds_boost=true;
+#NET   "TMDS_D0_N"       Loc = "IO_SB_B4"; # | lvds_boost=true;
+#NET   "TMDS_D1_P"       Loc = "IO_SB_A5"; # | lvds_boost=true;
+#NET   "TMDS_D1_N"       Loc = "IO_SB_B5"; # | lvds_boost=true;
+#NET   "TMDS_D2_P"       Loc = "IO_SB_A6"; # | lvds_boost=true;
+#NET   "TMDS_D2_N"       Loc = "IO_SB_B6"; # | lvds_boost=true;
 
 ## Not used for ESY
 ## Pmod (fixed supply 2.5V)
@@ -203,3 +203,9 @@ NET   "LED[4]"        Loc = "IO_SB_A1";
 NET   "LED[5]"        Loc = "IO_SB_B1";
 NET   "LED[6]"        Loc = "IO_SB_A3";
 NET   "LED[7]"        Loc = "IO_SB_B3";
+
+##User Buttons
+NET	  "BUTTON[0]"		  Loc = "IO_EA_B4";
+NET	  "BUTTON[1]"		  Loc = "IO_EA_A4";
+NET	  "BUTTON[2]"		  Loc = "IO_EA_B3";
+
