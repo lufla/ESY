@@ -37,8 +37,8 @@ module pll (
 wire usr_pll_lock_stdy, usr_pll_lock;
 
 CC_PLL #(
-	.REF_CLK("10.0"),    // reference input in MHz
-	.OUT_CLK("125.5"),   // pll output frequency in MHz, 25.0*5 = 125.0
+	.REF_CLK("25.0"),    // reference input in MHz
+	.OUT_CLK("125.0"),   // pll output frequency in MHz, 25.0*5 = 125.0
 	.LOW_JITTER(1),      // 0: disable, 1: enable low jitter mode
 	//.LOCK_REQ(1),
 	.CI_FILTER_CONST(2), // optional CI filter constant

@@ -22,17 +22,17 @@ module csi_top #(
     output TMDS_D2_P, TMDS_D2_N,
     
     // Pmod
-    output [7:0] PMODA,
-    output [7:0] PMODB,
-    output [7:0] PMODC,
-    output [7:0] PMODD
+    //output [7:0] PMODA,
+    //output [7:0] PMODB,
+    //output [7:0] PMODC,
+    //output [7:0] PMODD
 );
     wire f0, f1;
 	
-    assign PMODA = {6'b0, f1, f0, 1'b0, csi_byte_clk};
-    assign PMODB = csi_checksum_good[7:0];
-    assign PMODC = {5'b0, checksum_err_seen ,i2c_done, csi_raw_valid};
-    assign PMODD = csi_checksum_err[7:0];
+    //assign PMODA = {6'b0, f1, f0, 1'b0, csi_byte_clk};
+    //assign PMODB = csi_checksum_good[7:0];
+    //assign PMODC = {5'b0, checksum_err_seen ,i2c_done, csi_raw_valid};
+    //assign PMODD = csi_checksum_err[7:0];
 
     wire rst_ref_n, rst_csi;
 	assign rst_csi = ~rst_ref_n;
