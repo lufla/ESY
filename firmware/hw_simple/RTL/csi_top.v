@@ -5,7 +5,6 @@ module csi_top #(
     parameter NUM_RAW = 8
 )(
     input  clk_ext,
-    input [2:0] BUTTON,
     output reg [7:0] LED
 );
 
@@ -20,15 +19,6 @@ module csi_top #(
 
     reg [21:0] counter = 0;
     reg [7:0] led_count = 0;
-
-    wire btn1;
-
-    CC_IBUF #(
-        .PULLUP (1)
-    ) buttbuff (
-        .I (BUTTON[0]),
-        .Y (btn1)
-    );
 
 always  @(posedge clk_ext)
 begin
