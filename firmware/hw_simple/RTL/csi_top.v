@@ -18,13 +18,13 @@ module csi_top #(
     localparam integer COUNT_MAX = 500000 - 1;
 
     reg [21:0] counter = 0;
-    reg [7:0] led_count = 0;
+    reg [7:0] led_count = 1;
 
 always  @(posedge clk_ext)
 begin
     if (counter >= COUNT_MAX) begin
         counter <= 0;
-        led_count <= led_count + 1;
+        led_count <= led_count << 1;
     end else begin
         counter <= counter + 1;
     end
