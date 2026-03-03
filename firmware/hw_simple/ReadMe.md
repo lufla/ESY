@@ -30,17 +30,17 @@ Install usbipd (windows powershell):
 
 After Installation, list the USB devices and search for the FTDI device.
 ```console
-usbpid list
+usbipd list
 ```
 
 Bind the FTDI device depending on the bus ID.
 ```console
-usbpid bind --busid xxx-yyy
+usbipd bind --busid xxx-yyy
 ```
 
 Attach the device to WSL
 ```console
-usbpid attach --wsl --busid xxx-yyy
+usbipd attach --wsl --busid xxx-yyy
 ```
 
 ## All Users
