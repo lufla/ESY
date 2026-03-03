@@ -57,3 +57,4 @@ openFPGALoader --cable digilent_hs3 --detect --busdev-num BUS:DEV
 
 On success, one should read the JTAG speed of the connected JTAG device.
 
+Use script ```start.sh BUS:DEV``` for simplified synthesis and sending code to hardware.
