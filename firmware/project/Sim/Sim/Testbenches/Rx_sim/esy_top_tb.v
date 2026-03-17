@@ -63,7 +63,7 @@ initial begin
     clk = 1'b0;
 end
 always begin
-    #10 clk =  ~clk;
+    #4 clk =  ~clk;
 end
 
 function [7:0] calculate_ecc;
@@ -257,6 +257,15 @@ initial begin
     #200
     send_mipi_frame();
     #200
+    send_mipi_frame();
+    #200
+    send_mipi_frame();
+    #200
+    send_mipi_frame();
+    #200
+    send_mipi_frame();
+    #200
+	#1000
     $finish;
 end
 

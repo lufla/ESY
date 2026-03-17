@@ -1,7 +1,7 @@
-RTL/csi_top.v
 RTL/CCI/INIT_IMX219.v
 RTL/CCI/i2c_master.v
 RTL/CCI/CCI_Handler.v
+RTL/esy_DE10.v
 RTL/DVI out/color_balance.v
 RTL/DVI out/pll.v
 RTL/DVI out/serializer_gatemate_10_to_1_generic.v
@@ -18,3 +18,4 @@ RTL/CSI Rx/csi_rx_top.v
 RTL/CSI Rx/csi_rx_align_byte.v
 RTL/CSI Rx/csi_rx_packet_handler.v
 RTL/CSI Rx/lfsr.v
+RTL/esy_top.v

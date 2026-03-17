@@ -97,164 +97,142 @@ module INIT_IMX219 (
   always @(posedge clk)
     if (read_enable)
       case (init_step)
-        6'd0: register_addresses <= 16'h0103; // software reset
-        6'd1: register_addresses <= 16'h02A0; // defect correction
-        6'd2: register_addresses <= 16'h0100; // mode select
-        6'd3: register_addresses <= 16'h0100;
-        6'd4: register_addresses <= 16'h0114;
-        6'd5: register_addresses <= 16'h0128;
-        6'd6: register_addresses <= 16'h012A;
-        6'd7: register_addresses <= 16'h012B;
-        6'd8: register_addresses <= 16'h0160;
-        6'd9: register_addresses <= 16'h0161;
-        6'd10: register_addresses <=  16'h0162;
-        6'd11: register_addresses <=  16'h0163;
-
+        6'd0: register_addresses <= 16'h0100;
+        6'd1: register_addresses <= 16'h0114;
+        6'd2: register_addresses <= 16'h0128;
+        6'd3: register_addresses <= 16'h012A;
+        6'd4: register_addresses <= 16'h012B;
+        6'd5: register_addresses <= 16'h0160;
+        6'd6: register_addresses <= 16'h0161;
+        6'd7: register_addresses <=  16'h0162;
+        6'd8: register_addresses <=  16'h0163;
 		//following registers are for setting image resolution
-        6'd12: register_addresses <=  16'h0164;	
-        6'd13: register_addresses <=  16'h0165;
-        6'd14: register_addresses <=  16'h0166;
-        6'd15: register_addresses <=  16'h0167;
-        6'd16: register_addresses <=  16'h0168;
-        6'd17: register_addresses <=  16'h0169;
-        6'd18: register_addresses <=  16'h016A;
-        6'd19: register_addresses <=  16'h016B;
-        6'd20: register_addresses <=  16'h016C;
-        6'd21: register_addresses <=  16'h016D;
-        6'd22: register_addresses <=  16'h016E;
-        6'd23: register_addresses <=  16'h016F;
+        6'd9: register_addresses <=  16'h0164;	
+        6'd10: register_addresses <=  16'h0165;
+        6'd11: register_addresses <=  16'h0166;
+        6'd12: register_addresses <=  16'h0167;
+        6'd13: register_addresses <=  16'h0168;
+        6'd14: register_addresses <=  16'h0169;
+        6'd15: register_addresses <=  16'h016A;
+        6'd16: register_addresses <=  16'h016B;
+        6'd17: register_addresses <=  16'h016C;
+        6'd18: register_addresses <=  16'h016D;
+        6'd19: register_addresses <=  16'h016E;
+        6'd20: register_addresses <=  16'h016F;
 		//end of registers for resolution setting
-
-        6'd24: register_addresses <= 16'h0170;
-        6'd25: register_addresses <= 16'h0171;
-        6'd26: register_addresses <= 16'h0174;
-        6'd27: register_addresses <= 16'h0175;
-
+        6'd21: register_addresses <= 16'h0170;
+        6'd22: register_addresses <= 16'h0171;
+        6'd23: register_addresses <= 16'h0174;
+        6'd24: register_addresses <= 16'h0175;
 		//registers for output data format
-        6'd28: register_addresses <= 16'h018C;
-        6'd29: register_addresses <= 16'h018D;
+        6'd25: register_addresses <= 16'h018C;
+        6'd26: register_addresses <= 16'h018D;
 		//end of registers for output data format
-
-        6'd30: register_addresses <= 16'h0301;
-        6'd31: register_addresses <= 16'h0303;
-        6'd32: register_addresses <= 16'h0306;
-        6'd33: register_addresses <= 16'h0307;
-        6'd34: register_addresses <= 16'h0309;	//OPPXCK_DIV apparently this is relevant for data format setting
-        6'd35: register_addresses <= 16'h030B;
-        6'd36: register_addresses <= 16'h030C;  //PLL_OP_MPY_MSB (clock multiplier for D-PHY clk)
-        6'd37: register_addresses <= 16'h030D;  //PLL_OP_MPY_LSB 
-        6'd38: register_addresses <= 16'h0602;	//monochrome test image red MSB
-        6'd39: register_addresses <= 16'h0603;	//test image red LSB
-        6'd40: register_addresses <= 16'h0604;	//test image green(R) MSB
-        6'd41: register_addresses <= 16'h0605;	//test image green(R) LSB
-        6'd42: register_addresses <= 16'h0606;	//test image blue MSB
-        6'd43: register_addresses <= 16'h0607;	//test image blue LSB
-		6'd44: register_addresses <= 16'h0608;	//test image green(B) MSB
-		6'd45: register_addresses <= 16'h0609;	//test image green(B) LSB
-        6'd46: register_addresses <= 16'h0600;	//test pattern mode
-        6'd47: register_addresses <= 16'h0601;	//test pattern mode
-        6'd48: register_addresses <= 16'h0620;
-        6'd49: register_addresses <= 16'h0621;
-        6'd50: register_addresses <= 16'h0622;
-        6'd51: register_addresses <= 16'h0623;
-
+        6'd27: register_addresses <= 16'h0301;
+        6'd28: register_addresses <= 16'h0303;
+        6'd29: register_addresses <= 16'h0306;
+        6'd30: register_addresses <= 16'h0307;
+        6'd31: register_addresses <= 16'h0309;	//OPPXCK_DIV apparently this is relevant for data format setting
+        6'd32: register_addresses <= 16'h030B;
+        6'd33: register_addresses <= 16'h030C;  //PLL_OP_MPY_MSB (clock multiplier for D-PHY clk)
+        6'd34: register_addresses <= 16'h030D; //PLL_OP_MPY_LSB 
+        6'd35: register_addresses <= 16'h0602;	//monochrome test image red MSB
+        6'd36: register_addresses <= 16'h0603;	//test image red LSB
+        6'd37: register_addresses <= 16'h0604;	//test image green(R) MSB
+        6'd38: register_addresses <= 16'h0605;	//test image green(R) LSB
+        6'd39: register_addresses <= 16'h0606;	//test image blue MSB
+        6'd40: register_addresses <= 16'h0607;	//test image blue LSB
+		6'd41: register_addresses <= 16'h0608;	//test image green(B) MSB
+		6'd42: register_addresses <= 16'h0609;	//test image green(B) LSB
+        6'd43: register_addresses <= 16'h0600;	//tp mode
+        6'd44: register_addresses <= 16'h0601;	//tp mode
+        6'd45: register_addresses <= 16'h0620;
+        6'd46: register_addresses <= 16'h0621;
+        6'd47: register_addresses <= 16'h0622;
+        6'd48: register_addresses <= 16'h0623;
         //here come the setting registers for test pattern size
-		6'd52: register_addresses <= 16'h0624;
-        6'd53: register_addresses <= 16'h0625;
-        6'd54: register_addresses <= 16'h0626;
-        6'd55: register_addresses <= 16'h0627;
-        //end of registers for test pattern size
-        
-        6'd56: register_addresses <= 16'h0158;	//digital gain MSB
-        6'd57: register_addresses <= 16'h0159;	//digital gain LSB
-        6'd58: register_addresses <= 16'h0157;	//analogue gain
-        6'd59: register_addresses <= 16'h015A; //integration time MSB
-        6'd60: register_addresses <= 16'h015B; //integration time LSB
-        6'd61: register_addresses <= 16'hD1EA; //dark level adjust pedestal MSB
-        6'd62: register_addresses <= 16'hD1EB; //dark level adjust pedestal LSB
-        6'd63: register_addresses <= 16'h0100;  //last entry. "start stream" command
+		6'd49: register_addresses <= 16'h0624;
+        6'd50: register_addresses <= 16'h0625;
+        6'd51: register_addresses <= 16'h0626;
+        6'd52: register_addresses <= 16'h0627;
+		//end of registers for test pattern size
+        6'd53: register_addresses <= 16'h0158;	//dig gain glb
+        6'd54: register_addresses <= 16'h0159;	//dig gain glb
+        6'd55: register_addresses <= 16'h0157;	//ana gain glb
+        6'd56: register_addresses <= 16'h015A; //integration time MSB
+        6'd57: register_addresses <= 16'h015B; //integration time LSB
+        6'd58: register_addresses <= 16'h0100;  //last entry. "start stream" command
         default: register_addresses <= 0;  //default address is 0
       endcase
 
   always @(posedge clk)
     if (read_enable)
       case (init_step)
-        6'd0: register_data <= 8'h01; // software reset
-        6'd1: register_data <= 8'h00; // defect correction 0
-        6'd2: register_data <= 8'h00; // mode select: standby
-        6'd3: register_data <= 0;
-        6'd4: register_data <= 1;
-        6'd5: register_data <= 0;
-        6'd6: register_data <= 8'h18;
-        6'd7: register_data <= 8'h00;
-        6'd8: register_data <= 8'h03;	//FRM_LEN_MSB
-        6'd9: register_data <= 8'h5E;	//FRM_LEN_LSB
-        6'd10: register_data <= 8'h0E;	//LINE_LEN_MSB
-        6'd11: register_data <= 8'h02;	//LINE_LEN_LSB	
-
-		//start of settings for resolution (Full Sensor)
-        6'd12: register_data <= 8'h00;	//x start MSB (0, 0)
-        6'd13: register_data <= 8'h00;
-        6'd14: register_data <= 8'h0C;	//x end MSB (3280 px - 1)
-        6'd15: register_data <= 8'hCF;	
-        6'd16: register_data <= 8'h00;	//y start MSB (0, 0)
-        6'd17: register_data <= 8'h00;	
-        6'd18: register_data <= 8'h09;	//y end MSB (2464)
-        6'd19: register_data <= 8'h9F;	
-        6'd20: register_data <= 8'h0C;  //output size (x)
-        6'd21: register_data <= 8'hD0;
-        6'd22: register_data <= 8'h09;  //output size (y)
-        6'd23: register_data <= 8'hA0;
+        6'd0: register_data <= 0;
+        6'd1: register_data <= 1;
+        6'd2: register_data <= 0;
+        6'd3: register_data <= 8'h18;
+        6'd4: register_data <= 8'h00;
+        6'd5: register_data <= 8'h03;	//FRM_LEN_MSB
+        6'd6: register_data <= 8'h5E;	//FRM_LEN_LSB
+        6'd7: register_data <= 8'h0E;	//LINE_LEN_MSB
+        6'd8: register_data <= 8'h02;	//LINE_LEN_LSB	
+		//start of settings for resolution
+        6'd9: register_data <= 8'h03;	//x start MSB
+        6'd10: register_data <= 8'hE8;
+        6'd11: register_data <= 8'h06;	//x end MSB
+        6'd12: register_data <= 8'h68;	
+        6'd13: register_data <= 8'h02;	//y start MSB
+        6'd14: register_data <= 8'hEE;	
+        6'd15: register_data <= 8'h04;	//y end MSB
+        6'd16: register_data <= 8'hCE;	
+        6'd17: register_data <= 8'h02;
+        6'd18: register_data <= 8'h80;
+        6'd19: register_data <= 8'h01;
+        6'd20: register_data <= 8'hE0;
 		//end of settings for resolution
-
-        6'd24: register_data <= 8'h01;
-        6'd25: register_data <= 8'h01;
-        6'd26: register_data <= 8'h00;	//BINNING (0 for no binning)
-        6'd27: register_data <= 8'h00;	//BINNING (0 for no binning)
-
+        6'd21: register_data <= 8'h01;
+        6'd22: register_data <= 8'h01;
+        6'd23: register_data <= 8'h00;	//BINNING (0 for no binning)
+        6'd24: register_data <= 8'h00;	//BINNING (0 for no binning)
 		//output data format settings (0A0A for RAW10, 0808 for RAW8)
-        6'd28: register_data <= 8'h0A;
-        6'd29: register_data <= 8'h0A;
+        6'd25: register_data <= 8'h08;
+        6'd26: register_data <= 8'h08;
 		//end of output data format settings
-
-        6'd30: register_data <= 8'h04;	//VTPXCK_DIV
-        6'd31: register_data <= 8'h01;
-        6'd32: register_data <= 8'h00;
-        6'd33: register_data <= 8'h2E;	//PLL_VT_MPY_LSB
-        6'd34: register_data <= 8'h0A;	//this must be "08" for RAW8, "0A" RAW10 
-        6'd35: register_data <= 8'h01;
-        6'd36: register_data <= 8'h00; //PLL_OP_MPY_LSB
-        6'd37: register_data <= 8'h32; //PLL_OP_MPY_LSB
-        6'd38: register_data <= 8'h00; //monochrome test image red MSB
-        6'd39: register_data <= 8'h00;
-        6'd40: register_data <= 8'h00; //monochrome test image green(R) MSB
-        6'd41: register_data <= 8'h00;
-        6'd42: register_data <= 8'h00; //monochrome test image blue MSB
-        6'd43: register_data <= 8'h00;
-		6'd44: register_data <= 8'h00; //monochrome test image green(B) MSB
-		6'd45: register_data <= 8'h00;
-        6'd46: register_data <= 8'h00;  //test pattern mode 0
-        6'd47: register_data <= 8'h00;	//test pattern mode 0
+        6'd27: register_data <= 8'h04;	//VTPXCK_DIV
+        6'd28: register_data <= 8'h01;
+        6'd29: register_data <= 8'h00;
+        6'd30: register_data <= 8'h2E;	//PLL_VT_MPY_LSB
+        6'd31: register_data <= 8'h08;	//this must be "08" for RAW8, "0A" RAW10 
+        6'd32: register_data <= 8'h01;
+        6'd33: register_data <= 8'h00; //PLL_OP_MPY_LSB
+        6'd34: register_data <= 8'h32; //PLL_OP_MPY_LSB
+        6'd35: register_data <= 8'h00; //monochrome test image red MSB
+        6'd36: register_data <= 8'h00;
+        6'd37: register_data <= 8'h00; //monochrome test image green(R) MSB
+        6'd38: register_data <= 8'h00;
+        6'd39: register_data <= 8'h00; //monochrome test image blue MSB
+        6'd40: register_data <= 8'h00;
+		6'd41: register_data <= 8'h00; //monochrome test image green(B) MSB
+		6'd42: register_data <= 8'h00;
+        6'd43: register_data <= 8'h00;  //tp mode (always 0)
+        6'd44: register_data <= 8'h00;	//tp mode
+        6'd45: register_data <= 8'h00;
+        6'd46: register_data <= 8'h00;
+        6'd47: register_data <= 8'h00;
         6'd48: register_data <= 8'h00;
-        6'd49: register_data <= 8'h00;
-        6'd50: register_data <= 8'h00;
-        6'd51: register_data <= 8'h00;
-
-        //settings for test pattern size
- 	    6'd52: register_data <= 8'h02;	//width MSByte
-        6'd53: register_data <= 8'h80;	//width LSByte
-        6'd54: register_data <= 8'h01;	//height MSByte
-        6'd55: register_data <= 8'hE0;	//height LSByte
+       //settings for test pattern size
+ 	    6'd49: register_data <= 8'h02;	//width MSByte
+        6'd50: register_data <= 8'h80;	//width LSByte
+        6'd51: register_data <= 8'h01;	//height MSByte
+        6'd52: register_data <= 8'hE0;	//height LSByte
         //end of settings for test pattern size
-
-		6'd56: register_data <= 8'h01; //digital gain MSB 1
-        6'd57: register_data <= 8'h00; //digital gain LSB 0
-        6'd58: register_data <= 8'h00;	//analogue gain off
-        6'd59: register_data <= 8'h03;	//integration time MSB
-        6'd60: register_data <= 8'h5A;	//integration time LSB
-        6'd61: register_data <= 8'h00;	//dark level adjust pedestal MSB 0
-        6'd62: register_data <= 8'h00;	//dark level adjust pedestal MSB (default 40)
-        6'd63: register_data <= 8'h01;  //last entry. This is the "start stream" command
+		6'd53: register_data <= 8'h01; //dig gain glb
+        6'd54: register_data <= 8'h0F; //dig gain glb	(prev value: 00)
+        6'd55: register_data <= 8'hAE;	//ana gain glb	(prev value: 80)
+        6'd56: register_data <= 8'h03;	//integration time MSB
+        6'd57: register_data <= 8'h5A;	//integration time LSB
+        6'd58: register_data <= 8'h01;  //last entry. This is the "start stream" command
         default: register_data <= 0;  //default address is 0
       endcase
 
@@ -265,7 +243,7 @@ module INIT_IMX219 (
   always @(posedge clk) begin
     if (run_init) begin
       if (step_increment) init_step <= init_step + 1;  //go to next step on request from top_module
-      if (init_step == 6'd64)
+      if (init_step == 6'd59)
         complete <= 1;  
     end else begin
       init_step <= 0;     
