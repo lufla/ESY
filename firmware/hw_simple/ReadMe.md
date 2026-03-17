@@ -12,7 +12,9 @@ Ich habe zwei shell-skripte erstellt, 'run_yosys.sh' und 'run_sim.sh' (Ausführe
 Diese führen eine Synthese durch und eine Simulation für den Testcode von Sven Krause.
 
 Damit diese Scripte funktionieren muss nach Änderungen eine neue Fileliste erstellt werden:
-find RTL -type f \( -name '*.v' -o -name '*.sv' \) > files.f
+```console
+    find RTL -type f \( -name '*.v' -o -name '*.sv' \) > files.f
+```
 
 Dann müsst ihr noch "gtkwave csi_top_tb.vcd csi_top.gtkw" aufrufen um die Waveforms sehen zu können.
 Das entspricht so dem, was wir in der Vorlesung hatten, nur mit OpenSource Tools statt Quartus.
