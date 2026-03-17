@@ -54,30 +54,30 @@ module esy_DE10 (
 		.A_DO(fifo_outbuff),						// connect to output
 		.B_DI(fifo_buff),						// connect to CSI-2
 		.A_CLK(clk125),
-		.B_CLK(csi_byte_clk),						// PLL??
+		.B_CLK(csi_clk),						// PLL??
 		.A_EN(fifo_re),
 		.A_BM(40'hFF_FF_FF_FF_00),
 		.B_EN(fifo_we),
 		.B_BM(40'hFF_FF_FF_FF_00),
-		.F_RST_N(rst_ref_n),
+		.F_RST_N(rst_n),
 		.F_EMPTY(fifo_empty)
 	);
 	
 	wire two_bytes;
 
 	// two 16-bit values are buffered from CSI-2 and then written to FIFO
-	always@(posedge csi_byte_clk) begin
-		if (rst_ref_n == 0) begin
+	always@(posedge csi_clk) begin
+		if (rst_n == 0) begin
 			two_bytes <= 0;
 			fifo_we <= 0;
 			fifo_buff <= 40'h00_00_00_00_00;
 		end else begin
-			if (two_bytes == 0 && csi_raw_valid == 1) begin
-				fifo_buff [15:0] <= csi_raw_data;
+			if (two_bytes == 0 && data_avail == 1) begin
+				fifo_buff [15:0] <= data_in;
 				two_bytes <= 1;
 				fifo_we <= 0;
-			end else if (two_bytes == 1 && csi_raw_valid == 1) begin
-				fifo_buff [31:0] <= csi_raw_data;
+			end else if (two_bytes == 1 && data_avail == 1) begin
+				fifo_buff [31:0] <= data_in;
 				two_bytes <= 0;
 				fifo_we <= 1;
 			end else begin
